@@ -33,6 +33,17 @@ public class LoginActivity extends AppCompatActivity {
         InicializarComponentes();
 
         autenticacao = ConfiguracaoFirebase.getFirebaseAutenticacao();
+        tipoAcesso.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                if(tipoAcesso.isChecked()){
+                    botaoLogar.setText("CADASTRAR...");
+                }
+                else{
+                    botaoLogar.setText("LOGAR...");
+                }
+            }
+        });
 
         botaoLogar.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -41,18 +52,32 @@ public class LoginActivity extends AppCompatActivity {
                 String senha = campoSenha.getText().toString();
 
                 if(!email.isEmpty() && !senha.isEmpty()){
-                    autenticacao.signInWithEmailAndPassword(
-                            email, senha
-                    ).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-                            if(task.isSuccessful()){
-                                startActivity(new Intent(getApplicationContext(), HomeActivity.class));
-                            }else{
-                                Toast.makeText(LoginActivity.this, "Erro! Verifique o usuário/senha e tente novamente! ", Toast.LENGTH_SHORT).show();
+                    if (tipoAcesso.isChecked()){ //Checkado == Cadastrar
+                        autenticacao.createUserWithEmailAndPassword(email, senha).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                if(task.isSuccessful()){
+                                    Toast.makeText(LoginActivity.this, "Cadastro Realizado com sucesso! Efetuando login...", Toast.LENGTH_SHORT).show();
+                                    startActivity(new Intent(getApplicationContext(), HomeActivity.class));
+                                }else{
+
+                                }
                             }
-                        }
-                    });
+                        });
+                   }else{ //Não checkado == Login
+                        autenticacao.signInWithEmailAndPassword(
+                                email, senha
+                        ).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                if(task.isSuccessful()){
+                                    startActivity(new Intent(getApplicationContext(), HomeActivity.class));
+                                }else{
+                                    Toast.makeText(LoginActivity.this, "Erro! Verifique o usuário/senha e tente novamente! ", Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        });
+                    }
                 }else{
                     Toast.makeText(LoginActivity.this, "Preencha E-mail e Senha!", Toast.LENGTH_SHORT).show();
                 }
