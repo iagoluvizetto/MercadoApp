@@ -9,8 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MercadoApp">
-        <activity android:name=".Activity.LoginActivity"></activity>
-        <activity android:name=".Activity.SplashActivity">
+        <activity android:name=".activity.HomeActivity" />
+        <activity android:name=".activity.LoginActivity" />
+        <activity android:name=".activity.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

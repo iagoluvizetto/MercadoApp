@@ -1,4 +1,4 @@
-package com.example.mercadoapp.Activity;
+package com.example.mercadoapp.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,8 +8,6 @@ import android.os.Handler;
 import android.view.View;
 
 import com.example.mercadoapp.R;
-
-import java.util.concurrent.Delayed;
 
 public class SplashActivity extends AppCompatActivity {
 
