@@ -3,4 +3,6 @@
     <string name="title_home">MercadoApp</string>
     <string name="title_carrinho">Carrinho</string>
     <string name="title_perfil">Perfil</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
