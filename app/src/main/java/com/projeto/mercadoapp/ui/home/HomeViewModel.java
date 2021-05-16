@@ -37,7 +37,7 @@ public class HomeViewModel extends AndroidViewModel {
     public HomeViewModel(Application application) {
         super(application);
         mText = new MutableLiveData<>();
-        mText.setValue("Home");
+        mText.setValue("");
     }
 
     public MutableLiveData<String> getText() { return mText; }

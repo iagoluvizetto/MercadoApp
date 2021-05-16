@@ -6,14 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".ui.home.HomeFragment">
 
-    <TextView
-        android:id="@+id/text_home"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="8dp" />
+<!--    <TextView-->
+<!--        android:id="@+id/text_home"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="64dp"-->
+<!--        android:background="@color/light_blue"-->
+<!--        android:gravity="center"-->
+<!--        android:textAlignment="center"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:textSize="34sp"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/horizontalScrollView"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
 
     <FrameLayout
         android:id="@+id/frameLayoutProdutos"
@@ -30,7 +35,7 @@
         android:id="@+id/horizontalScrollView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="@+id/text_home">
+        android:scrollbars="none">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -41,25 +46,79 @@
                 android:id="@+id/hortifrutiButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Hortifruti" />
+                android:drawableLeft="@drawable/ic_vegetable"
+                android:drawableTint="@color/button_color"
+                android:stateListAnimator="@null"
+                android:text="Hortifruti"
+                android:textAllCaps="false"
+                android:textColor="@color/button_color"
+                android:textSize="20sp"
+                app:backgroundTint="#00FFFFFF" />
+
+            <Button
+                android:id="@+id/merceariaButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_bread"
+                android:drawableTint="@color/button_color"
+                android:stateListAnimator="@null"
+                android:text="Mercearia"
+                android:textAllCaps="false"
+                android:textColor="@color/button_color"
+                android:textSize="20sp"
+                app:backgroundTint="#00FFFFFF" />
+
+            <Button
+                android:id="@+id/fiambreriaButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_salami"
+                android:drawableTint="@color/button_color"
+                android:stateListAnimator="@null"
+                android:text="Fiambreria"
+                android:textAllCaps="false"
+                android:textColor="@color/button_color"
+                android:textSize="20sp"
+                app:backgroundTint="#00FFFFFF" />
 
             <Button
                 android:id="@+id/carnesButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Carnes" />
+                android:drawableLeft="@drawable/ic_meat"
+                android:drawableTint="@color/button_color"
+                android:stateListAnimator="@null"
+                android:text="Carnes"
+                android:textAllCaps="false"
+                android:textColor="@color/button_color"
+                android:textSize="20sp"
+                app:backgroundTint="#00FFFFFF" />
 
             <Button
-                android:id="@+id/buttonOi"
+                android:id="@+id/bebidasButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Teste" />
+                android:drawableLeft="@drawable/ic_softdrinks"
+                android:drawableTint="@color/button_color"
+                android:stateListAnimator="@null"
+                android:text="Bebidas"
+                android:textAllCaps="false"
+                android:textColor="@color/button_color"
+                android:textSize="20sp"
+                app:backgroundTint="#00FFFFFF" />
 
             <Button
-                android:id="@+id/button11"
+                android:id="@+id/higieneButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Button" />
+                android:drawableLeft="@drawable/ic_toothbrush"
+                android:drawableTint="@color/button_color"
+                android:stateListAnimator="@null"
+                android:text="Higiene"
+                android:textAllCaps="false"
+                android:textColor="@color/button_color"
+                android:textSize="20sp"
+                app:backgroundTint="#00FFFFFF" />
         </LinearLayout>
     </HorizontalScrollView>
 

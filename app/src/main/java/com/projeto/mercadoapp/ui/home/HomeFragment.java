@@ -3,7 +3,6 @@ package com.projeto.mercadoapp.ui.home;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,27 +19,7 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonArrayRequest;
-import com.android.volley.toolbox.Volley;
 import com.projeto.mercadoapp.R;
-import com.projeto.mercadoapp.models.JsonPlaceHolderApi;
-import com.projeto.mercadoapp.models.Produto;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 public class HomeFragment
         extends Fragment
@@ -49,6 +28,12 @@ public class HomeFragment
     private HomeViewModel homeViewModel;
     private FragmentActivity productFragmentContext;//Conseguir acessar a activity para criar outros fragmentos
     Context thisContext;
+    private Button hortifrutiButton;
+    private Button merceariaButton;
+    private Button fiambreriaButton;
+    private Button carnesButton;
+    private Button bebidasButton;
+    private Button higieneButton;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -58,9 +43,21 @@ public class HomeFragment
 
         thisContext = container.getContext();
 
-        final TextView textView = root.findViewById(R.id.text_home);
-        final Button hortifrutiButton = root.findViewById(R.id.hortifrutiButton);
-        final Button carnesButton = root.findViewById(R.id.carnesButton);
+        //final TextView textView = root.findViewById(R.id.text_home);
+
+        hortifrutiButton = root.findViewById(R.id.hortifrutiButton);
+        merceariaButton = root.findViewById(R.id.merceariaButton);
+        fiambreriaButton = root.findViewById(R.id.fiambreriaButton);
+        carnesButton = root.findViewById(R.id.carnesButton);
+        bebidasButton = root.findViewById(R.id.bebidasButton);
+        higieneButton = root.findViewById(R.id.higieneButton);
+
+        hortifrutiButton.setOnClickListener(this);
+        merceariaButton.setOnClickListener(this);
+        fiambreriaButton.setOnClickListener(this);
+        carnesButton.setOnClickListener(this);
+        bebidasButton.setOnClickListener(this);
+        higieneButton.setOnClickListener(this);
 
 
         //Observa click no menu inferior
@@ -71,8 +68,7 @@ public class HomeFragment
             }
         });
 
-        hortifrutiButton.setOnClickListener(this);
-        carnesButton.setOnClickListener(this);
+
 
         return root;
     }
@@ -88,23 +84,65 @@ public class HomeFragment
 
         switch(v.getId()){
             case R.id.hortifrutiButton:
+                v.setSelected(true);
+                handleButtonSelection(v.getId());
                 setFragment(new ProdutosFragment(), "hortifruti");
                 break;
+            case R.id.merceariaButton:
+                v.setSelected(true);
+                handleButtonSelection(v.getId());
+                setFragment(new ProdutosFragment(), "mercearia");
+                break;
+            case R.id.fiambreriaButton:
+                v.setSelected(true);
+                handleButtonSelection(v.getId());
+                setFragment(new ProdutosFragment(), "fiambreria");
+                break;
             case R.id.carnesButton:
+                v.setSelected(true);
+                handleButtonSelection(v.getId());
                 setFragment(new ProdutosFragment(), "carnes");
                 break;
-            case R.id.buttonOi:
-                //Teste
+            case R.id.bebidasButton:
+                v.setSelected(true);
+                handleButtonSelection(v.getId());
+                setFragment(new ProdutosFragment(), "bebidas");
+                break;
+            case R.id.higieneButton:
+                v.setSelected(true);
+                handleButtonSelection(v.getId());
+                setFragment(new ProdutosFragment(), "higiene");
                 break;
         }
     }
 
+    public void handleButtonSelection(int i) {
+        if(hortifrutiButton.getId() != i){
+            hortifrutiButton.setSelected(false);
+        }
+        if(merceariaButton.getId() != i){
+            merceariaButton.setSelected(false);
+        }
+        if(fiambreriaButton.getId() != i){
+            fiambreriaButton.setSelected(false);
+        }
+        if(carnesButton.getId() != i){
+            carnesButton.setSelected(false);
+        }
+        if(bebidasButton.getId() != i){
+            bebidasButton.setSelected(false);
+        }
+        if(higieneButton.getId() != i){
+            higieneButton.setSelected(false);
+        }
+    }
+
     private void changeTextTest(View v) {
-        TextView tv = v.findViewById(R.id.text_home);
+        //TextView tv = v.findViewById(R.id.text_home);
         homeViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(String s) {
-                tv.setText(s);
+                //tv.setText(s);
             }
         });
     }

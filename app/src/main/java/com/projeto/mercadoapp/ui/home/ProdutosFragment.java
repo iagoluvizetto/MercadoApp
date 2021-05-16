@@ -4,6 +4,9 @@ import android.content.Context;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -16,6 +19,7 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.projeto.mercadoapp.R;
+import com.projeto.mercadoapp.adapter.ProdutoAdapter;
 import com.projeto.mercadoapp.models.JsonPlaceHolderApi;
 import com.projeto.mercadoapp.models.Produto;
 
@@ -38,7 +42,7 @@ public class ProdutosFragment extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
     private View view;
-    Context thisContext;
+    private Context thisContext;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -89,13 +93,13 @@ public class ProdutosFragment extends Fragment {
 
         //textView.setText(msg);
 
-        callJson(category);
+        callJson(category, container);
 
         return view;
 
     }
 
-    public void callJson(String category) {
+    public void callJson(String category, ViewGroup viewGroup) {
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://mercado-api-mobile.herokuapp.com/")
@@ -105,28 +109,35 @@ public class ProdutosFragment extends Fragment {
 
         Call<List<Produto>> call = jsonPlaceHolderApi.getProdutosByCategory(category);
         call.enqueue(new Callback<List<Produto>>() {
+
             @Override
             public void onResponse(Call<List<Produto>> call, retrofit2.Response<List<Produto>> response) {
                 if(!response.isSuccessful()) {
                     Log.e("deuruim", response.message());
                     return;
                 }
-                Log.e("deuboa", "ok");
+                Log.i("deuboa", "ok");
 
                 List<Produto> produtos = response.body();
 
-                LinearLayout linearLayout = view.findViewById(R.id.listagemProdutos);
-                for(Produto p : produtos){
-                    TextView textView = new TextView(view.getContext());
-                    ImageView imageView = new ImageView(view.getContext());
-                    textView.setText(p.getNome());
-                    Glide.with(view.getContext()).load("https://" + p.getImg()).into(imageView);
-                    imageView.setAdjustViewBounds(true);
-                    imageView.setMaxHeight(200);
-                    imageView.setMaxWidth(200);
-                    linearLayout.addView(textView);
-                    linearLayout.addView(imageView);
-                }
+                GridLayoutManager glm = new GridLayoutManager(thisContext, 2);
+                RecyclerView rvProdutos = viewGroup.findViewById(R.id.rvProdutos);
+                rvProdutos.setLayoutManager(glm);
+                ProdutoAdapter produtoAdapter = new ProdutoAdapter(produtos);
+                rvProdutos.setAdapter(produtoAdapter);
+//                LinearLayout linearLayout = view.findViewById(R.id.listagemProdutos);
+//                for(Produto p : produtos){
+//                    TextView textView = new TextView(view.getContext());
+//                    ImageView imageView = new ImageView(view.getContext());
+//                    textView.setText(p.getNome());
+//                    Glide.with(view.getContext()).load("https://" + p.getImg()).into(imageView);
+//                    imageView.setAdjustViewBounds(true);
+//                    imageView.setMaxHeight(200);
+//                    imageView.setMaxWidth(200);
+//                    linearLayout.addView(textView);
+//                    linearLayout.addView(imageView);
+//
+//                }
 
             }
 
