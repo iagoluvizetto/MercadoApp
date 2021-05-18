@@ -44,6 +44,8 @@ public class ProdutoAdapter extends RecyclerView.Adapter<ProdutoAdapter.ProdutoV
         Produto produto = this.produtoList.get(position);
 
         TextView textView = holder.viewProduto.findViewById(R.id.produtoNome);
+        TextView textViewPreco = holder.viewProduto.findViewById(R.id.produtoPrice);
+        textViewPreco.setText(produto.getPrecoStr());
         textView.setText(produto.getNome()+"");
         ImageView imageView = holder.viewProduto.findViewById(R.id.produtoImage);
         Glide.with(holder.itemView)
