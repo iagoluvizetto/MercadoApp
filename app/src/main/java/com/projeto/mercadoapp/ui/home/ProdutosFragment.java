@@ -123,7 +123,7 @@ public class ProdutosFragment extends Fragment {
                 GridLayoutManager glm = new GridLayoutManager(thisContext, 2);
                 RecyclerView rvProdutos = viewGroup.findViewById(R.id.rvProdutos);
                 rvProdutos.setLayoutManager(glm);
-                ProdutoAdapter produtoAdapter = new ProdutoAdapter(produtos);
+                ProdutoAdapter produtoAdapter = new ProdutoAdapter(produtos, getActivity());
                 rvProdutos.setAdapter(produtoAdapter);
 //                LinearLayout linearLayout = view.findViewById(R.id.listagemProdutos);
 //                for(Produto p : produtos){

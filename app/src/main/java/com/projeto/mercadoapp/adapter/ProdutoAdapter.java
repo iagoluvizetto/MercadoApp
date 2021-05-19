@@ -1,5 +1,8 @@
 package com.projeto.mercadoapp.adapter;
 
+import android.app.Activity;
+import android.content.Context;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -7,15 +10,21 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.projeto.mercadoapp.R;
 import com.projeto.mercadoapp.models.Produto;
+import com.projeto.mercadoapp.ui.home.DetalheFragment;
 
 import java.util.List;
 
 public class ProdutoAdapter extends RecyclerView.Adapter<ProdutoAdapter.ProdutoViewHolder> {
+
+    private FragmentActivity activity;
 
     private List<Produto> produtoList;
 
@@ -29,7 +38,10 @@ public class ProdutoAdapter extends RecyclerView.Adapter<ProdutoAdapter.ProdutoV
         }
     }
 
-    public ProdutoAdapter(List<Produto> produtos) { this.produtoList = produtos; }
+    public ProdutoAdapter(List<Produto> produtos, FragmentActivity context) {
+        this.produtoList = produtos;
+        this.activity = context;
+    }
 
     @NonNull
     @Override
@@ -58,6 +70,24 @@ public class ProdutoAdapter extends RecyclerView.Adapter<ProdutoAdapter.ProdutoV
 //        imageView.setMaxHeight(200);
 //        imageView.setMaxWidth(200);
 
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                abreDetalheFragment(produto);
+            }
+        });
+
+    }
+
+    private void abreDetalheFragment(Produto produto) {
+        Bundle bundle = new Bundle();
+        bundle.putParcelable("produto", produto);
+        FragmentManager fragmentManager = activity.getSupportFragmentManager();
+
+        DetalheFragment fragment = DetalheFragment.newInstance(produto);
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.frameLayoutProdutos, fragment);
+        fragmentTransaction.commit();
     }
 
     @Override
