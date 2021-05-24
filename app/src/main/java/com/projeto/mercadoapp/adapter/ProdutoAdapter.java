@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -63,8 +64,8 @@ public class ProdutoAdapter extends RecyclerView.Adapter<ProdutoAdapter.ProdutoV
         Glide.with(holder.itemView)
                 .load("https://" + produto.getImg())
                 //.load("https://homepages.cae.wisc.edu/~ece533/images/zelda.png")
-                .error(R.drawable.ic_loading)
-                .placeholder(R.drawable.ic_loading)
+                //.error(R.drawable.ic_loading)
+                //.placeholder(R.drawable.ic_loading)
                 .into(imageView);
         imageView.setAdjustViewBounds(true);
 //        imageView.setMaxHeight(200);
@@ -73,6 +74,7 @@ public class ProdutoAdapter extends RecyclerView.Adapter<ProdutoAdapter.ProdutoV
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 abreDetalheFragment(produto);
             }
         });
@@ -80,6 +82,8 @@ public class ProdutoAdapter extends RecyclerView.Adapter<ProdutoAdapter.ProdutoV
     }
 
     private void abreDetalheFragment(Produto produto) {
+
+
         Bundle bundle = new Bundle();
         bundle.putParcelable("produto", produto);
         FragmentManager fragmentManager = activity.getSupportFragmentManager();
@@ -88,6 +92,8 @@ public class ProdutoAdapter extends RecyclerView.Adapter<ProdutoAdapter.ProdutoV
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.frameLayoutProdutos, fragment);
         fragmentTransaction.commit();
+        HorizontalScrollView view  =  activity.findViewById(R.id.horizontalScrollView);
+        view.setVisibility(View.GONE);
     }
 
     @Override

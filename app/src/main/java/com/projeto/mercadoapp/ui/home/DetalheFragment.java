@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -56,17 +58,41 @@ public class DetalheFragment extends Fragment {
         TextView tvPreco = view.findViewById(R.id.txt_preço);
         ImageView imgProduto = view.findViewById(R.id.img_produto);
 
+
         tvPreco.setText(produto.getPrecoStr());
         tvNome.setText(produto.getNome()+"");
 
         Glide.with(imgProduto)
                 .load("https://" + produto.getImg())
-                .error(R.drawable.ic_loading)
-                .placeholder(R.drawable.ic_loading)
+                //.error(R.drawable.ic_loading)
+                //.placeholder(R.drawable.ic_loading)
                 .into(imgProduto);
         imgProduto.setAdjustViewBounds(true);
 
+       Button btMais = view.findViewById(R.id.btn_mais);
+       Button btMenos = view.findViewById(R.id.btn_menos);
+       EditText editeQtd = view.findViewById(R.id.edite_qtd);
 
+
+        btMais.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+               int valor = Integer.parseInt(editeQtd.getText().toString());
+               valor = valor + 1;
+                editeQtd.setText("" + valor);
+            }
+
+        });
+
+        btMenos.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                int valor = Integer.parseInt(editeQtd.getText().toString());
+                if(valor > 1) {
+                    valor = valor - 1;
+                    editeQtd.setText("" + valor);
+                }
+            }
+
+        });
         return view;
 
     }

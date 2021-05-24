@@ -12,7 +12,6 @@
         android:layout_width="wrap_content"
         android:layout_height="200dp"
         android:layout_marginTop="24dp"
-        android:src="@drawable/ic_loading"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -21,23 +20,35 @@
         android:id="@+id/txt_nome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="24dp"
+        android:layout_marginEnd="32dp"
         android:text="Detalhe"
-        android:textSize="24sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/img_produto" />
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="14dp"
+        android:background="#E4E3E3"
+        app:layout_constraintTop_toBottomOf="@+id/txt_nome"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="28dp" />
+
+
     <TextView
         android:id="@+id/txt_preço"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="36dp"
         android:layout_marginEnd="32dp"
         android:text="Preço"
         android:textColor="@color/blue"
-        android:textSize="24sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_nome" />
@@ -46,9 +57,50 @@
         android:id="@+id/btn_adicionar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="Adicionar ao carrinho"
+        android:layout_marginTop="28dp"
+        android:text="Adicionar"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.891"
+        app:layout_constraintStart_toEndOf="@+id/btn_mais"
+        app:layout_constraintTop_toBottomOf="@+id/txt_preço" />
+
+    <Button
+        android:id="@+id/btn_menos"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="28dp"
+        android:text="-"
+        android:textColor="@color/blue"
+        app:backgroundTint="#FFFFFF"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_preço" />
+
+    <Button
+        android:id="@+id/btn_mais"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="28dp"
+        android:text="+"
+        android:textColor="@color/blue"
+        app:backgroundTint="#FFFFFF"
+        app:layout_constraintStart_toEndOf="@+id/edite_qtd"
+        app:layout_constraintTop_toBottomOf="@+id/txt_preço" />
+
+    <EditText
+        android:id="@+id/edite_qtd"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="28dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="1"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toStartOf="@+id/btn_mais"
+        app:layout_constraintStart_toEndOf="@+id/btn_menos"
+        app:layout_constraintTop_toBottomOf="@+id/txt_preço" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

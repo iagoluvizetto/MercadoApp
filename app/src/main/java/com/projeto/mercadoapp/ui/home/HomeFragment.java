@@ -59,6 +59,7 @@ public class HomeFragment
         bebidasButton.setOnClickListener(this);
         higieneButton.setOnClickListener(this);
 
+        hortifrutiButton.callOnClick();
 
         //Observa click no menu inferior
         homeViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
@@ -77,6 +78,8 @@ public class HomeFragment
     public void onAttach(Activity activity) {
         productFragmentContext = (FragmentActivity) activity;
         super.onAttach(activity);
+
+
     }
 
     @Override
