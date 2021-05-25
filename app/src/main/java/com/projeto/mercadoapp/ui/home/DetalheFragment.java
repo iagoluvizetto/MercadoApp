@@ -14,6 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.bumptech.glide.Glide;
+import com.projeto.mercadoapp.MainActivity;
 import com.projeto.mercadoapp.R;
 import com.projeto.mercadoapp.models.Produto;
 
@@ -21,13 +22,10 @@ public class DetalheFragment extends Fragment {
 
     private Produto produto;
 
-
     public DetalheFragment() {
-
     }
 
 
-    // TODO: Rename and change types and number of parameters
     public static DetalheFragment newInstance(Produto produto) {
         DetalheFragment fragment = new DetalheFragment();
         Bundle args = new Bundle();
@@ -73,6 +71,13 @@ public class DetalheFragment extends Fragment {
        Button btMenos = view.findViewById(R.id.btn_menos);
        EditText editeQtd = view.findViewById(R.id.edite_qtd);
 
+        Button btAdd = view.findViewById(R.id.btn_adicionar);
+
+        btAdd.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                ((MainActivity)getActivity()).updateCartCount();
+            }
+        });
 
         btMais.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {

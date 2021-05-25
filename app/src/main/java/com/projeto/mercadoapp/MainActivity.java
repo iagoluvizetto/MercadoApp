@@ -2,7 +2,13 @@ package com.projeto.mercadoapp;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.View;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
+import com.google.android.material.badge.BadgeDrawable;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,6 +21,8 @@ import androidx.navigation.ui.NavigationUI;
 public class MainActivity extends AppCompatActivity {
 
     public static Context instance;
+    private BadgeDrawable badge;
+    private BottomNavigationView navView;
 
 
     @Override
@@ -24,9 +32,8 @@ public class MainActivity extends AppCompatActivity {
         instance = getApplicationContext();
 
         setContentView(R.layout.activity_main);
-        BottomNavigationView navView = findViewById(R.id.nav_view);
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
+         navView = findViewById(R.id.nav_view);
+
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.navigation_home, R.id.navigation_carrinho, R.id.navigation_perfil)
                 .build();
@@ -34,7 +41,14 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
 
+    }
 
+    public void updateCartCount(){
+        if (badge == null){
+            badge = navView.getOrCreateBadge(R.id.navigation_carrinho);
+        }
+        int number  = badge.getNumber();
+        badge.setNumber(number + 1);
     }
 
     public static Context getInstance() {
