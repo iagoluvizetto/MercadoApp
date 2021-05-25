@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.home.HomeFragment">
+
+<!--    <TextView-->
+<!--        android:id="@+id/text_home"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="64dp"-->
+<!--        android:background="@color/light_blue"-->
+<!--        android:gravity="center"-->
+<!--        android:textAlignment="center"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:textSize="34sp"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/horizontalScrollView"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+    <FrameLayout
+        android:id="@+id/frameLayoutProdutos"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView">
+
+    </FrameLayout>
+
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/hortifrutiButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_vegetable"
+                android:drawableTint="@color/button_color"
+                android:stateListAnimator="@null"
+                android:text="Hortifruti"
+                android:textAllCaps="false"
+                android:textColor="@color/button_color"
+                android:textSize="20sp"
+                app:backgroundTint="#00FFFFFF" />
+
+            <Button
+                android:id="@+id/merceariaButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_bread"
+                android:drawableTint="@color/button_color"
+                android:stateListAnimator="@null"
+                android:text="Mercearia"
+                android:textAllCaps="false"
+                android:textColor="@color/button_color"
+                android:textSize="20sp"
+                app:backgroundTint="#00FFFFFF" />
+
+            <Button
+                android:id="@+id/fiambreriaButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_salami"
+                android:drawableTint="@color/button_color"
+                android:stateListAnimator="@null"
+                android:text="Fiambreria"
+                android:textAllCaps="false"
+                android:textColor="@color/button_color"
+                android:textSize="20sp"
+                app:backgroundTint="#00FFFFFF" />
+
+            <Button
+                android:id="@+id/carnesButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_meat"
+                android:drawableTint="@color/button_color"
+                android:stateListAnimator="@null"
+                android:text="Carnes"
+                android:textAllCaps="false"
+                android:textColor="@color/button_color"
+                android:textSize="20sp"
+                app:backgroundTint="#00FFFFFF" />
+
+            <Button
+                android:id="@+id/bebidasButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_softdrinks"
+                android:drawableTint="@color/button_color"
+                android:stateListAnimator="@null"
+                android:text="Bebidas"
+                android:textAllCaps="false"
+                android:textColor="@color/button_color"
+                android:textSize="20sp"
+                app:backgroundTint="#00FFFFFF" />
+
+            <Button
+                android:id="@+id/higieneButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_toothbrush"
+                android:drawableTint="@color/button_color"
+                android:stateListAnimator="@null"
+                android:text="Higiene"
+                android:textAllCaps="false"
+                android:textColor="@color/button_color"
+                android:textSize="20sp"
+                app:backgroundTint="#00FFFFFF" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

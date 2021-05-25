@@ -7,18 +7,18 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:40235393535:android:c58b6adca79c9d490c07ca",
+        "mobilesdk_app_id": "1:40235393535:android:628139ffd86713990c07ca",
         "android_client_info": {
-          "package_name": "com.example.mercadoapp"
+          "package_name": "com.projeto.mercadoapp"
         }
       },
       "oauth_client": [
         {
-          "client_id": "40235393535-us9vptvtmvemsrleck6vp3skt4p0pcbo.apps.googleusercontent.com",
+          "client_id": "40235393535-oshhvpml84g50j1nab599lmc57pjre81.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.mercadoapp",
-            "certificate_hash": "676a09e102fec90179063982f9338c7d1d26ec46"
+            "package_name": "com.projeto.mercadoapp",
+            "certificate_hash": "5b9e1ce056f93c6b9eb166582c473ea07802370b"
           }
         },
         {
