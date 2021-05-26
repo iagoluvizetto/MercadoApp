@@ -17,7 +17,6 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
         getSupportActionBar().hide();
-        super.onWindowFocusChanged(hasFocus);
         if (hasFocus) {
             hideSystemUI();
         }
