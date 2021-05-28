@@ -11,6 +11,8 @@ import android.widget.TextView;
 import com.google.android.material.badge.BadgeDrawable;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.projeto.mercadoapp.R;
+import com.projeto.mercadoapp.models.Carrinho;
+import com.projeto.mercadoapp.models.CarrinhoItem;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
@@ -24,7 +26,6 @@ public class MainActivity extends AppCompatActivity {
     public static Context instance;
     private BadgeDrawable badge;
     private BottomNavigationView navView;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
