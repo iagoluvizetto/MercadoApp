@@ -5,6 +5,7 @@ import android.content.Context;
 import com.projeto.mercadoapp.ui.inicial.MainActivity;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class Carrinho {
@@ -33,8 +34,37 @@ public class Carrinho {
     }
 
     public void adicionar(CarrinhoItem c){
-        listaitens.add(c);
+        for (CarrinhoItem item : listaitens) {
+            if(item.getProduto().getId() == c.getProduto().getId()){
+                item.setQuantidade(item.getQuantidade() + c.getQuantidade());
+                atualizarItens();
+                return;
 
+            }
+        }
+                listaitens.add(c);
+                atualizarItens();
+    }
+
+    public void atualizarItens(){
+        quantidade = 0;
+        for (CarrinhoItem item : listaitens) {
+            quantidade = quantidade + item.getQuantidade();
+        }
+    }
+
+    public void remover(CarrinhoItem c){
+//        for (CarrinhoItem item : listaitens) {
+//           if(item.getProduto().getId() == c.getProduto().getId()){
+//               listaitens.remove(item);
+//           }
+//        }
+        for (Iterator<CarrinhoItem> it = listaitens.iterator(); it.hasNext(); ) {
+            CarrinhoItem item = it.next();
+            if (item.getProduto().getId() == c.getProduto().getId()) {
+                it.remove();
+            }
+        }
     }
 
 

@@ -81,45 +81,49 @@ public class CarrinhoFragment extends Fragment {
 
             //textView.setText(msg);
 
-            callJson("hortifruti", container);
-
+   //         callJson("hortifruti", container);
+            LinearLayoutManager llm = new LinearLayoutManager(getActivity());
+                   RecyclerView rvProdutos = view.findViewById(R.id.rv_carrinho);
+                    rvProdutos.setLayoutManager(llm);
+                    CarrinhoAdapter carrinhoAdapter = new CarrinhoAdapter(getActivity());
+                    rvProdutos.setAdapter(carrinhoAdapter);
             return view;
 
         }
 
-        public void callJson(String category, ViewGroup viewGroup) {
-
-            Retrofit retrofit = new Retrofit.Builder()
-                    .baseUrl("https://mercado-api-mobile.herokuapp.com/")
-                    .addConverterFactory(GsonConverterFactory.create())
-                    .build();
-            JsonPlaceHolderApi jsonPlaceHolderApi = retrofit.create(JsonPlaceHolderApi.class);
-
-            Call<List<Produto>> call = jsonPlaceHolderApi.getProdutosByCategory(category);
-            call.enqueue(new Callback<List<Produto>>() {
-
-                @Override
-                public void onResponse(Call<List<Produto>> call, retrofit2.Response<List<Produto>> response) {
-                    if(!response.isSuccessful()) {
-                        Log.e("deuruim", response.message());
-                        return;
-                    }
-                    Log.i("deuboa", "ok");
-
-                    List<Produto> produtos = response.body();
-
-                    LinearLayoutManager llm = new LinearLayoutManager(getActivity());
-                    RecyclerView rvProdutos = viewGroup.findViewById(R.id.rv_carrinho);
-                    rvProdutos.setLayoutManager(llm);
-                    CarrinhoAdapter carrinhoAdapter = new CarrinhoAdapter();
-                    rvProdutos.setAdapter(carrinhoAdapter);
-
-                }
-
-                @Override
-                public void onFailure(Call<List<Produto>> call, Throwable t) {
-                    Log.e("deuruim", t.getMessage());
-                }
-            });
-        }
-    }
+//        public void callJson(String category, ViewGroup viewGroup) {
+//
+//            Retrofit retrofit = new Retrofit.Builder()
+//                    .baseUrl("https://mercado-api-mobile.herokuapp.com/")
+//                    .addConverterFactory(GsonConverterFactory.create())
+//                    .build();
+//            JsonPlaceHolderApi jsonPlaceHolderApi = retrofit.create(JsonPlaceHolderApi.class);
+//
+//            Call<List<Produto>> call = jsonPlaceHolderApi.getProdutosByCategory(category);
+//            call.enqueue(new Callback<List<Produto>>() {
+//
+//                @Override
+//                public void onResponse(Call<List<Produto>> call, retrofit2.Response<List<Produto>> response) {
+//                    if(!response.isSuccessful()) {
+//                        Log.e("deuruim", response.message());
+//                        return;
+//                    }
+//                    Log.i("deuboa", "ok");
+//
+//                    List<Produto> produtos = response.body();
+//
+//                    LinearLayoutManager llm = new LinearLayoutManager(getActivity());
+//                    RecyclerView rvProdutos = viewGroup.findViewById(R.id.rv_carrinho);
+//                    rvProdutos.setLayoutManager(llm);
+//                    CarrinhoAdapter carrinhoAdapter = new CarrinhoAdapter();
+//                    rvProdutos.setAdapter(carrinhoAdapter);
+//
+//                }
+//
+//                @Override
+//                public void onFailure(Call<List<Produto>> call, Throwable t) {
+//                    Log.e("deuruim", t.getMessage());
+//                }
+//            });
+//        }
+  }

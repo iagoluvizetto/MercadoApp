@@ -14,9 +14,13 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.bumptech.glide.Glide;
+import com.projeto.mercadoapp.models.Carrinho;
+import com.projeto.mercadoapp.models.CarrinhoItem;
 import com.projeto.mercadoapp.ui.inicial.MainActivity;
 import com.projeto.mercadoapp.R;
 import com.projeto.mercadoapp.models.Produto;
+
+import java.net.CacheRequest;
 
 public class DetalheFragment extends Fragment {
 
@@ -75,7 +79,19 @@ public class DetalheFragment extends Fragment {
 
         btAdd.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+
+                int qtd = Integer.valueOf(editeQtd.getText().toString());
+
+                CarrinhoItem carrinhoItem = new CarrinhoItem(produto, qtd);
+
+                Carrinho carrinho = Carrinho.getInstancia();
+                carrinho.adicionar(carrinhoItem);
+
+
                 ((MainActivity)getActivity()).updateCartCount();
+
+
+
             }
         });
 
