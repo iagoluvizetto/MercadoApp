@@ -1,18 +1,26 @@
 package com.projeto.mercadoapp.models;
 
 import android.content.Context;
+import android.widget.TextView;
+
+import androidx.fragment.app.FragmentActivity;
 
 import com.projeto.mercadoapp.ui.inicial.MainActivity;
 
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Locale;
 
 public class Carrinho {
 
     private List<CarrinhoItem> listaitens;
     private double valorTotal;
     private int quantidade;
+    private FragmentActivity activity;
+    private TextView textTotal;
+
 
     private static Carrinho instancia;
 
@@ -48,8 +56,14 @@ public class Carrinho {
 
     public void atualizarItens(){
         quantidade = 0;
+        valorTotal = 0;
         for (CarrinhoItem item : listaitens) {
+            valorTotal = valorTotal + item.getQuantidade() * item.getProduto().getPreco();
             quantidade = quantidade + item.getQuantidade();
+        }
+        ((MainActivity)activity).updateCartCount(quantidade);
+        if(textTotal != null){
+            textTotal.setText(getValorTotalStr());
         }
     }
 
@@ -65,8 +79,13 @@ public class Carrinho {
                 it.remove();
             }
         }
+        atualizarItens();
     }
-
+    public String getValorTotalStr() {
+        Locale localeBR = new Locale( "pt", "BR" );
+        NumberFormat dinheiroBR = NumberFormat.getCurrencyInstance(localeBR);
+        return dinheiroBR.format(valorTotal);
+    }
 
     public double getValorTotal() {
         return valorTotal;
@@ -83,5 +102,14 @@ public class Carrinho {
 
     public void setQuantidade(int quantidade) {
         this.quantidade = quantidade;
+    }
+
+    public void setActivity(FragmentActivity activity) {
+        this.activity = activity;
+    }
+
+    public void setTextTotal(TextView textTotal) {
+        this.textTotal = textTotal;
+        atualizarItens();
     }
 }

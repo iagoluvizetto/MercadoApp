@@ -20,6 +20,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.projeto.mercadoapp.R;
 import com.projeto.mercadoapp.adapter.CarrinhoAdapter;
 import com.projeto.mercadoapp.adapter.ProdutoAdapter;
+import com.projeto.mercadoapp.models.Carrinho;
 import com.projeto.mercadoapp.models.JsonPlaceHolderApi;
 import com.projeto.mercadoapp.models.Produto;
 import com.projeto.mercadoapp.ui.home.ProdutosFragment;
@@ -39,6 +40,8 @@ public class CarrinhoFragment extends Fragment {
         private static final String ARG_PARAM2 = "param2";
         private View view;
         private Context thisContext;
+        private TextView textTotal;
+
 
         // TODO: Rename and change types of parameters
         private String mParam1;
@@ -67,7 +70,13 @@ public class CarrinhoFragment extends Fragment {
             }
         }
 
-        @Override
+    @Override
+    public void onResume() {
+        super.onResume();
+        atualizarTotal();
+    }
+
+    @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
 
@@ -77,8 +86,8 @@ public class CarrinhoFragment extends Fragment {
             view = inflater.inflate(R.layout.fragment_carrinho, container, false);
             thisContext = container.getContext();
 
-            //TextView textView = view.findViewById(R.id.produtosFragmentTitle);
-
+             textTotal = view.findViewById(R.id.tv_total);
+                atualizarTotal();
             //textView.setText(msg);
 
    //         callJson("hortifruti", container);
@@ -89,6 +98,10 @@ public class CarrinhoFragment extends Fragment {
                     rvProdutos.setAdapter(carrinhoAdapter);
             return view;
 
+        }
+        public void atualizarTotal(){
+            Carrinho carrinho = Carrinho.getInstancia();
+            carrinho.setTextTotal(textTotal);
         }
 
 //        public void callJson(String category, ViewGroup viewGroup) {

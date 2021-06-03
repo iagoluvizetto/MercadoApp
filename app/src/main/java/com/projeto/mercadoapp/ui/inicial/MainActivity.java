@@ -42,15 +42,16 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
-
+        Carrinho carrinho = Carrinho.getInstancia();
+        carrinho.setActivity(this);
     }
 
-    public void updateCartCount(){
+    public void updateCartCount(int quantidade){
         if (badge == null){
             badge = navView.getOrCreateBadge(R.id.navigation_carrinho);
         }
-        int number  = badge.getNumber();
-        badge.setNumber(number + 1);
+
+        badge.setNumber(quantidade);
     }
 
     public static Context getInstance() {

@@ -88,7 +88,7 @@ public class DetalheFragment extends Fragment {
                 carrinho.adicionar(carrinhoItem);
 
 
-                ((MainActivity)getActivity()).updateCartCount();
+
 
 
 

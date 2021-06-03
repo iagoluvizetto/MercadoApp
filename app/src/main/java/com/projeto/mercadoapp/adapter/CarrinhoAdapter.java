@@ -67,7 +67,7 @@ public class CarrinhoAdapter extends RecyclerView.Adapter<CarrinhoAdapter.Carrin
                 carrinho.remover(ci);
                 notifyItemRemoved(position);
                 notifyItemRangeChanged(position, lista.size());
-                ((MainActivity)activity).updateCartCount();
+
             }
         });
     }
