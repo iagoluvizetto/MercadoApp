@@ -1,12 +1,16 @@
 package com.projeto.mercadoapp.models;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.widget.TextView;
 
 import androidx.fragment.app.FragmentActivity;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.projeto.mercadoapp.ui.inicial.MainActivity;
 
+import java.lang.reflect.Type;
 import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -30,7 +34,8 @@ public class Carrinho {
     }
 
     private Carrinho() {
-        listaitens = new ArrayList<>();
+
+
     }
 
     public List<CarrinhoItem> getListaitens() {
@@ -65,6 +70,7 @@ public class Carrinho {
         if(textTotal != null){
             textTotal.setText(getValorTotalStr());
         }
+        saveData();
     }
 
     public void remover(CarrinhoItem c){
@@ -106,10 +112,47 @@ public class Carrinho {
 
     public void setActivity(FragmentActivity activity) {
         this.activity = activity;
+        loadData();
     }
 
     public void setTextTotal(TextView textTotal) {
         this.textTotal = textTotal;
         atualizarItens();
     }
+    private void loadData() {
+
+        SharedPreferences sharedPreferences = activity.getSharedPreferences("carrinho", activity.MODE_PRIVATE);
+
+        Gson gson = new Gson();
+
+        String json = sharedPreferences.getString("produtos", null);
+
+        Type type = new TypeToken<ArrayList<CarrinhoItem>>() {}.getType();
+
+        listaitens = gson.fromJson(json, type);
+
+        if (listaitens == null) {
+
+            listaitens = new ArrayList<>();
+            return;
+        }
+        atualizarItens();
+    }
+
+    private void saveData() {
+
+        SharedPreferences sharedPreferences = activity.getSharedPreferences("carrinho", activity.MODE_PRIVATE);
+
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+
+        Gson gson = new Gson();
+
+        String json = gson.toJson(listaitens);
+
+        editor.putString("produtos", json);
+
+        editor.apply();
+
+    }
 }
+
