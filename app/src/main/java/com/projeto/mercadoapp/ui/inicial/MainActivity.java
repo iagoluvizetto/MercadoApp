@@ -11,6 +11,8 @@ import android.widget.TextView;
 import com.google.android.material.badge.BadgeDrawable;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.projeto.mercadoapp.R;
+import com.projeto.mercadoapp.models.Carrinho;
+import com.projeto.mercadoapp.models.CarrinhoItem;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
@@ -24,7 +26,6 @@ public class MainActivity extends AppCompatActivity {
     public static Context instance;
     private BadgeDrawable badge;
     private BottomNavigationView navView;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,15 +42,16 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
-
+        Carrinho carrinho = Carrinho.getInstancia();
+        carrinho.setActivity(this);
     }
 
-    public void updateCartCount(){
+    public void updateCartCount(int quantidade){
         if (badge == null){
             badge = navView.getOrCreateBadge(R.id.navigation_carrinho);
         }
-        int number  = badge.getNumber();
-        badge.setNumber(number + 1);
+
+        badge.setNumber(quantidade);
     }
 
     public static Context getInstance() {

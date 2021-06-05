@@ -81,4 +81,7 @@ public class Produto implements Parcelable {
 
     }
 
+    public double getPreco() {
+        return preco;
+    }
 }
