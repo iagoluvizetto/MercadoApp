@@ -9,7 +9,6 @@ public class HomeViewModel extends AndroidViewModel {
 
     private MutableLiveData<String> mText;
 
-
     public HomeViewModel(Application application) {
         super(application);
         mText = new MutableLiveData<>();

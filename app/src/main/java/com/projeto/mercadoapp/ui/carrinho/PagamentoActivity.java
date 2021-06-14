@@ -15,6 +15,7 @@ import com.projeto.mercadoapp.R;
 
 public class PagamentoActivity extends AppCompatActivity {
 
+
     EditText campoCep, campoEndereco, campoEnderecoNumero, campoEnderecoComplemento, campoBairro, campoCidade, campoValor;
     RadioButton radioButton, dinheiro;
     RadioGroup radioGroup;
