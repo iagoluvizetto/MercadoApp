@@ -14,10 +14,11 @@
         android:usesCleartextTraffic="true">
         <activity android:name=".ui.perfil.CadastroActivity"></activity>
         <activity android:name=".ui.perfil.LoginActivity"></activity>
-        <activity android:name=".ui.inicial.SplashActivity"/>
+        <activity android:name=".ui.inicial.MainActivity"/>
+        <activity android:name=".ui.carrinho.PagamentoActivity" />
 
         <activity
-            android:name=".ui.inicial.MainActivity"
+            android:name=".ui.inicial.SplashActivity"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

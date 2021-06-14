@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="produto"
+            type="com.projeto.mercadoapp.models.Produto" />
+    </data>
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nestedScrollView"
     android:layout_width="match_parent"
@@ -23,7 +29,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="32dp"
-        android:text="Detalhe"
+        android:text="@{produto.nome}"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -46,7 +52,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
         android:layout_marginEnd="32dp"
-        android:text="Preço"
+        android:text="@{produto.precoStr}"
         android:textColor="@color/blue"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -85,11 +91,11 @@
         android:text="+"
         android:textColor="@color/blue"
         app:backgroundTint="#FFFFFF"
-        app:layout_constraintStart_toEndOf="@+id/edite_qtd"
+        app:layout_constraintStart_toEndOf="@+id/edit_qtd"
         app:layout_constraintTop_toBottomOf="@+id/txt_preço" />
 
     <EditText
-        android:id="@+id/edite_qtd"
+        android:id="@+id/edit_qtd"
         android:layout_width="40dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -104,3 +110,4 @@
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

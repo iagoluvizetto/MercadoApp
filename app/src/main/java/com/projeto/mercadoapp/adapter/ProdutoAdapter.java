@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -61,6 +62,7 @@ public class ProdutoAdapter extends RecyclerView.Adapter<ProdutoAdapter.ProdutoV
         textViewPreco.setText(produto.getPrecoStr());
         textView.setText(produto.getNome()+"");
         ImageView imageView = holder.viewProduto.findViewById(R.id.produtoImage);
+        CardView card = holder.viewProduto.findViewById(R.id.cv_produto);
         Glide.with(holder.itemView)
                 .load("https://" + produto.getImg())
                 //.load("https://homepages.cae.wisc.edu/~ece533/images/zelda.png")
@@ -71,7 +73,7 @@ public class ProdutoAdapter extends RecyclerView.Adapter<ProdutoAdapter.ProdutoV
 //        imageView.setMaxHeight(200);
 //        imageView.setMaxWidth(200);
 
-        imageView.setOnClickListener(new View.OnClickListener() {
+        card.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 

@@ -14,6 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.bumptech.glide.Glide;
+import com.projeto.mercadoapp.databinding.FragmentDetalheBinding;
 import com.projeto.mercadoapp.models.Carrinho;
 import com.projeto.mercadoapp.models.CarrinhoItem;
 import com.projeto.mercadoapp.ui.inicial.MainActivity;
@@ -54,65 +55,44 @@ public class DetalheFragment extends Fragment {
                              @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
 
-       View view = inflater.inflate(R.layout.fragment_detalhe, container, false);
+       FragmentDetalheBinding binding = FragmentDetalheBinding.inflate(inflater, container, false);
 
-        TextView tvNome = view.findViewById(R.id.txt_nome);
-        TextView tvPreco = view.findViewById(R.id.txt_preço);
-        ImageView imgProduto = view.findViewById(R.id.img_produto);
+        binding.setProduto(produto);
 
-
-        tvPreco.setText(produto.getPrecoStr());
-        tvNome.setText(produto.getNome()+"");
-
-        Glide.with(imgProduto)
+        Glide.with(binding.imgProduto)
                 .load("https://" + produto.getImg())
-                //.error(R.drawable.ic_loading)
-                //.placeholder(R.drawable.ic_loading)
-                .into(imgProduto);
-        imgProduto.setAdjustViewBounds(true);
+                .into(binding.imgProduto);
+        binding.imgProduto.setAdjustViewBounds(true);
 
-       Button btMais = view.findViewById(R.id.btn_mais);
-       Button btMenos = view.findViewById(R.id.btn_menos);
-       EditText editeQtd = view.findViewById(R.id.edite_qtd);
-
-        Button btAdd = view.findViewById(R.id.btn_adicionar);
-
-        btAdd.setOnClickListener(new View.OnClickListener() {
+        binding.btnAdicionar.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
-                int qtd = Integer.valueOf(editeQtd.getText().toString());
-
+                int qtd = Integer.valueOf(binding.editQtd.getText().toString());
                 CarrinhoItem carrinhoItem = new CarrinhoItem(produto, qtd);
-
                 Carrinho carrinho = Carrinho.getInstancia();
                 carrinho.adicionar(carrinhoItem);
 
-
-
-
-
-
             }
         });
 
-        btMais.setOnClickListener(new View.OnClickListener() {
+        binding.btnMais.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-               int valor = Integer.parseInt(editeQtd.getText().toString());
+               int valor = Integer.parseInt(binding.editQtd.getText().toString());
                valor = valor + 1;
-                editeQtd.setText("" + valor);
+                binding.editQtd.setText("" + valor);
             }
         });
 
-        btMenos.setOnClickListener(new View.OnClickListener() {
+        binding.btnMenos.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                int valor = Integer.parseInt(editeQtd.getText().toString());
+                int valor = Integer.parseInt(binding.editQtd.getText().toString());
                 if(valor > 1) {
                     valor = valor - 1;
-                    editeQtd.setText("" + valor);
+                    binding.editQtd.setText("" + valor);
                 }
             }
         });
-        return view;
+        return binding.getRoot();
 
     }
 }
