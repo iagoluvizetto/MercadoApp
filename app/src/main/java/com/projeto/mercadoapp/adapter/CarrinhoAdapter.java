@@ -42,7 +42,7 @@ public class CarrinhoAdapter extends RecyclerView.Adapter<CarrinhoAdapter.Carrin
     @NotNull
     @Override
     public CarrinhoViewHolder onCreateViewHolder(@NonNull @NotNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_carrinho2, parent, false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_carrinho, parent, false);
         return new CarrinhoAdapter.CarrinhoViewHolder(v);
     }
 

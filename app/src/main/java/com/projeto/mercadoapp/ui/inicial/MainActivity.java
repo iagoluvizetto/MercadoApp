@@ -54,6 +54,13 @@ public class MainActivity extends AppCompatActivity {
         badge.setNumber(quantidade);
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_share, menu);
+        return true;
+    }
+
     public static Context getInstance() {
         return instance;
     }
