@@ -97,6 +97,7 @@ public class CarrinhoFragment extends Fragment {
             return view;
         }
 
+
         public void atualizarTotal(){
             Carrinho carrinho = Carrinho.getInstancia();
             carrinho.setTextTotal(textTotal);
