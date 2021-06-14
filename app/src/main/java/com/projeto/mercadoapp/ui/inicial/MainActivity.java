@@ -1,21 +1,19 @@
 package com.projeto.mercadoapp.ui.inicial;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.View;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
+import android.view.MenuItem;
 
 import com.google.android.material.badge.BadgeDrawable;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.projeto.mercadoapp.BuildConfig;
 import com.projeto.mercadoapp.R;
 import com.projeto.mercadoapp.models.Carrinho;
-import com.projeto.mercadoapp.models.CarrinhoItem;
+import com.projeto.mercadoapp.models.Produto;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentManager;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -61,7 +59,47 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+        return false;
+    }
+
     public static Context getInstance() {
         return instance;
     }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+        switch (item.getItemId()) {
+            case R.id.action_share:
+                share();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    private void share(){
+
+        Produto produto = Carrinho.getInstancia().getProdutoDetalhe();
+
+        Intent shareIntent = new Intent(Intent.ACTION_SEND);
+        shareIntent.setType("text/plain");
+        shareIntent.setPackage("com.whatsapp");
+        shareIntent.putExtra(Intent.EXTRA_SUBJECT, "MercadoApp");
+        String shareMessage= "\nVeja esta oferta no MercadoApp: \n" + produto.getNome() + "  " + "Preço: " + produto.getPrecoStr()+ "\n";
+        shareMessage = shareMessage + "https://www.mercadoapp.com.br/produto/" + produto.getId();
+        shareIntent.putExtra(Intent.EXTRA_TEXT, shareMessage);
+
+        try {
+            startActivity(shareIntent);
+        } catch (android.content.ActivityNotFoundException ex) {
+
+        }
+
+
+    }
+
 }

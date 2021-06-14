@@ -24,7 +24,7 @@ public class Carrinho {
     private int quantidade;
     private FragmentActivity activity;
     private TextView textTotal;
-
+    private Produto produtoDetalhe;
 
     private static Carrinho instancia;
 
@@ -137,6 +137,14 @@ public class Carrinho {
             return;
         }
         atualizarItens();
+    }
+
+    public Produto getProdutoDetalhe() {
+        return produtoDetalhe;
+    }
+
+    public void setProdutoDetalhe(Produto produtoDetalhe) {
+        this.produtoDetalhe = produtoDetalhe;
     }
 
     private void saveData() {

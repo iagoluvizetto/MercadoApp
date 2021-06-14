@@ -19,6 +19,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.projeto.mercadoapp.R;
+import com.projeto.mercadoapp.models.Carrinho;
 import com.projeto.mercadoapp.models.Produto;
 import com.projeto.mercadoapp.ui.home.DetalheFragment;
 
@@ -88,6 +89,7 @@ public class ProdutoAdapter extends RecyclerView.Adapter<ProdutoAdapter.ProdutoV
 
         Bundle bundle = new Bundle();
         bundle.putParcelable("produto", produto);
+        Carrinho.getInstancia().setProdutoDetalhe(produto);
         FragmentManager fragmentManager = activity.getSupportFragmentManager();
 
         DetalheFragment fragment = DetalheFragment.newInstance(produto);

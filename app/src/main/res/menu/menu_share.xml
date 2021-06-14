@@ -6,5 +6,6 @@
         android:id="@+id/action_share"
         android:orderInCategory="100"
         android:title="Compartilhar"
-        app:showAsAction="always" />
+        android:icon="@android:drawable/ic_menu_share"
+        app:showAsAction="ifRoom" />
 </menu>

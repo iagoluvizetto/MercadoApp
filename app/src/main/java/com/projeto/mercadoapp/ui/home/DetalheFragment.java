@@ -43,6 +43,7 @@ public class DetalheFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
         if (getArguments() != null) {
             Produto p  = getArguments().getParcelable("produto");
             this.produto = p;
@@ -97,5 +98,9 @@ public class DetalheFragment extends Fragment {
 
     }
 
+    @Override
+    public void onPrepareOptionsMenu(Menu menu) {
+
+    }
 
 }
