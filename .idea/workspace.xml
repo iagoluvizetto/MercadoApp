@@ -32,30 +32,17 @@
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:master" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:taisi" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </select>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="158dfe22-3abb-4299-80ac-0cf5b0409d18" name="Default Changelist" comment="gitignore">
-      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_legacy_legacy_support_v4_1_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_media_media_1_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_facebook_android_facebook_android_sdk_4_42_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_facebook_android_facebook_applinks_4_42_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_facebook_android_facebook_common_4_42_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_facebook_android_facebook_core_4_42_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_facebook_android_facebook_login_4_42_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_facebook_android_facebook_messenger_4_42_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_facebook_android_facebook_places_4_42_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_facebook_android_facebook_share_4_42_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_zxing_core_3_3_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_parse_bolts_bolts_android_1_4_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_parse_bolts_bolts_applinks_1_4_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_parse_bolts_bolts_tasks_1_4_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/navEditor.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/projeto/mercadoapp/ui/carrinho/PagamentoActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_pagamento.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/projeto/mercadoapp/adapter/CarrinhoAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/projeto/mercadoapp/models/Carrinho.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/projeto/mercadoapp/models/CarrinhoItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_carrinho.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_carrinho2.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.7.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.7.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.7.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7.1/fileHashes/fileHashes.bin" afterDir="false" />
@@ -70,8 +57,6 @@
       <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_activity_activity_1_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_activity_activity_1_1_0_aar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_annotation_annotation_1_1_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_annotation_annotation_1_1_0.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_annotation_annotation_experimental_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_annotation_annotation_experimental_1_0_0_aar.xml" afterDir="false" />
@@ -191,16 +176,11 @@
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_stdlib_common_1_3_50.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_stdlib_common_1_3_50.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_kotlinx_kotlinx_coroutines_android_1_3_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_kotlinx_kotlinx_coroutines_android_1_3_0.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_kotlinx_kotlinx_coroutines_core_1_3_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_kotlinx_kotlinx_coroutines_core_1_3_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/app/MercadoApp.app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/MercadoApp.app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/projeto/mercadoapp/ui/carrinho/CarrinhoFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/projeto/mercadoapp/ui/carrinho/CarrinhoFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/projeto/mercadoapp/ui/home/HomeViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/projeto/mercadoapp/ui/home/HomeViewModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/themes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/themes.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/projeto/mercadoapp/ui/home/DetalheFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/projeto/mercadoapp/ui/home/DetalheFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/projeto/mercadoapp/ui/inicial/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/projeto/mercadoapp/ui/inicial/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_carrinho.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_carrinho.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -208,10 +188,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="CodeInsightWorkspaceSettings">
-    <option name="optimizeImportsOnTheFly" value="true" />
-  </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[VirtualDevicePath@C:\Users\alana_de_mello\.android\avd\Pixel_4_API_30.avd]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[SerialNumber@ce03171379554cc70c]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -233,18 +210,7 @@
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="MercadoApp" type="f1a62948:ProjectNode" />
-                <item name="Run Configurations" type="7b0102dc:RunConfigurationsNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="MercadoApp" type="f1a62948:ProjectNode" />
                 <item name="app" type="2d1252cf:ModuleNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="MercadoApp" type="f1a62948:ProjectNode" />
-                <item name="app" type="2d1252cf:ModuleNode" />
-                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
               </path>
             </expand>
             <select />
@@ -256,8 +222,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="layoutResourceFile" />
         <option value="Class" />
+        <option value="layoutResourceFile" />
       </list>
     </option>
   </component>
@@ -279,31 +245,17 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="VirtualDevicePath@C:\Users\alana_de_mello\.android\avd\Pixel_4_API_30.avd" />
-    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2021-06-13T19:27:50.009614200Z" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="android-custom-viewC:/Users/alana_de_mello/AppData/Local/Android/Sdk/sources/android-30/android/view/View.java_SELECTED" value="View" />
-    <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="com.intellij.openapi.externalSystem.service.settings.ExternalSystemGroupConfigurable" value="ALL" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/java/com/projeto/mercadoapp/ui" />
-    <property name="project.structure.last.edited" value="SDK Location" />
-    <property name="project.structure.proportion" value="0.17" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
   </component>
   <component name="RecentsManager">
-    <key name="android.template.919552419">
-      <recent name="com.projeto.mercadoapp" />
-    </key>
-    <key name="android.template.406784931">
-      <recent name="com.projeto.mercadoapp.ui.pagamento" />
-    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.projeto.mercadoapp.adapter" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\alana_de_mello\AndroidStudioProjects\MercadoAppNew\app\src\main\java\com\projeto\mercadoapp\ui" />
       <recent name="C:\Users\iagot\AndroidStudioProjects\MercadoApp\app" />
     </key>
   </component>
@@ -373,7 +325,7 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MercadoApp" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="MercadoApp" type="GradleRunConfiguration" factoryName="Gradle">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -394,11 +346,6 @@
       <item itemvalue="Android App.app" />
       <item itemvalue="Gradle.MercadoApp" />
     </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Gradle.MercadoApp" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -437,7 +384,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="master" />
+                        <option value="taisi" />
                       </list>
                     </value>
                   </entry>
@@ -454,82 +401,52 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Inclusão do firebase, incluindo opção inicial de tela de Login/Cadastro. Ainda será adaptado." />
     <MESSAGE value="Merge de todas as branchs" />
-    <MESSAGE value="gitignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="gitignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge de todas as branchs" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="3358" y="267" key="#PSD" timestamp="1623621406955">
-      <screen x="2880" y="0" width="1920" height="1040" />
-    </state>
-    <state x="3358" y="267" key="#PSD/0.0.1280.680/5760.0.1920.1040/2880.0.1920.1040@2880.0.1920.1040" timestamp="1623621406955" />
     <state x="174" y="85" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1621915939825">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="174" y="85" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.860@0.0.1440.860" timestamp="1621915939825" />
-    <state x="3646" y="227" key="#com.intellij.ide.util.MemberChooser" timestamp="1623616540965">
-      <screen x="2880" y="0" width="1920" height="1040" />
+    <state x="-2114" y="227" key="#com.intellij.ide.util.MemberChooser" timestamp="1622159519362">
+      <screen x="-2880" y="0" width="1920" height="1040" />
     </state>
     <state x="-2114" y="227" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680/-2880.0.1920.1040@-2880.0.1920.1040" timestamp="1622159519362" />
-    <state x="3646" y="227" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680/5760.0.1920.1040/2880.0.1920.1040@2880.0.1920.1040" timestamp="1623616540965" />
-    <state x="3611" y="390" width="459" height="267" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1623551033078">
-      <screen x="2880" y="0" width="1920" height="1040" />
+    <state x="92" y="92" width="1256" height="676" key="AVDManager" timestamp="1621917378734">
+      <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="3611" y="390" width="459" height="267" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1280.680/2880.0.1920.1040/5760.0.1920.1040@2880.0.1920.1040" timestamp="1623551033078" />
-    <state x="3624" y="402" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages" timestamp="1623536891733">
-      <screen x="2880" y="0" width="1920" height="1040" />
-    </state>
-    <state x="3624" y="402" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages/0.0.1280.680/5760.0.1920.1040/2880.0.1920.1040@2880.0.1920.1040" timestamp="1623536891733" />
-    <state x="3571" y="268" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1623551107695">
-      <screen x="2880" y="0" width="1920" height="1040" />
-    </state>
-    <state x="3571" y="268" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.680/2880.0.1920.1040/5760.0.1920.1040@2880.0.1920.1040" timestamp="1623551107695" />
-    <state x="3003" y="111" width="1675" height="818" key="AVDManager" timestamp="1623622195092">
-      <screen x="2880" y="0" width="1920" height="1040" />
-    </state>
-    <state x="-7" y="1" width="1293" height="686" key="AVDManager/0.0.1280.680/2880.0.1920.1040/5760.0.1920.1040@2880.0.1920.1040" timestamp="1623548601864" />
-    <state x="3003" y="111" width="1675" height="818" key="AVDManager/0.0.1280.680/5760.0.1920.1040/2880.0.1920.1040@2880.0.1920.1040" timestamp="1623622195092" />
     <state x="92" y="92" width="1256" height="676" key="AVDManager/0.0.1440.860@0.0.1440.860" timestamp="1621917378734" />
-    <state x="3421" y="276" key="AndroidCreateResourceDirectoryDialog" timestamp="1623539340038">
-      <screen x="2880" y="0" width="1920" height="1040" />
-    </state>
-    <state x="3421" y="276" key="AndroidCreateResourceDirectoryDialog/0.0.1280.680/5760.0.1920.1040/2880.0.1920.1040@2880.0.1920.1040" timestamp="1623539340038" />
-    <state x="3421" y="276" key="AndroidCreateResourceFileDialog" timestamp="1623549003995">
-      <screen x="2880" y="0" width="1920" height="1040" />
+    <state x="-2339" y="276" key="AndroidCreateResourceFileDialog" timestamp="1622160008826">
+      <screen x="-2880" y="0" width="1920" height="1040" />
     </state>
     <state x="-2339" y="276" key="AndroidCreateResourceFileDialog/0.0.1280.680/-2880.0.1920.1040@-2880.0.1920.1040" timestamp="1622160008826" />
-    <state x="3421" y="276" key="AndroidCreateResourceFileDialog/0.0.1280.680/2880.0.1920.1040/5760.0.1920.1040@2880.0.1920.1040" timestamp="1623549003995" />
     <state width="384" height="466" key="DebuggerActiveHint" timestamp="1622159694273">
       <screen x="-2880" y="0" width="1920" height="1040" />
     </state>
     <state width="384" height="466" key="DebuggerActiveHint/0.0.1280.680/-2880.0.1920.1040@-2880.0.1920.1040" timestamp="1622159694273" />
-    <state x="3547" y="207" key="FileChooserDialogImpl" timestamp="1623613493443">
-      <screen x="2880" y="0" width="1920" height="1040" />
+    <state x="500" y="171" key="FileChooserDialogImpl" timestamp="1621916420106">
+      <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="3547" y="207" key="FileChooserDialogImpl/0.0.1280.680/5760.0.1920.1040/2880.0.1920.1040@2880.0.1920.1040" timestamp="1623613493443" />
     <state x="500" y="171" key="FileChooserDialogImpl/0.0.1440.860@0.0.1440.860" timestamp="1621916420106" />
-    <state width="1877" height="317" key="GridCell.Tab.0.bottom" timestamp="1623631883446">
-      <screen x="2880" y="0" width="1920" height="1040" />
+    <state width="1877" height="383" key="GridCell.Tab.0.bottom" timestamp="1622163357296">
+      <screen x="-2880" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="383" key="GridCell.Tab.0.bottom/0.0.1280.680/-2880.0.1920.1040@-2880.0.1920.1040" timestamp="1622163357296" />
-    <state width="1877" height="317" key="GridCell.Tab.0.bottom/0.0.1280.680/5760.0.1920.1040/2880.0.1920.1040@2880.0.1920.1040" timestamp="1623631883446" />
     <state width="1397" height="222" key="GridCell.Tab.0.bottom/0.0.1440.860@0.0.1440.860" timestamp="1621921329996" />
-    <state width="1877" height="317" key="GridCell.Tab.0.center" timestamp="1623631883445">
-      <screen x="2880" y="0" width="1920" height="1040" />
+    <state width="1877" height="383" key="GridCell.Tab.0.center" timestamp="1622163357295">
+      <screen x="-2880" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="383" key="GridCell.Tab.0.center/0.0.1280.680/-2880.0.1920.1040@-2880.0.1920.1040" timestamp="1622163357295" />
-    <state width="1877" height="317" key="GridCell.Tab.0.center/0.0.1280.680/5760.0.1920.1040/2880.0.1920.1040@2880.0.1920.1040" timestamp="1623631883445" />
     <state width="1397" height="222" key="GridCell.Tab.0.center/0.0.1440.860@0.0.1440.860" timestamp="1621921329996" />
-    <state width="1877" height="317" key="GridCell.Tab.0.left" timestamp="1623631883445">
-      <screen x="2880" y="0" width="1920" height="1040" />
+    <state width="1877" height="383" key="GridCell.Tab.0.left" timestamp="1622163357294">
+      <screen x="-2880" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="383" key="GridCell.Tab.0.left/0.0.1280.680/-2880.0.1920.1040@-2880.0.1920.1040" timestamp="1622163357294" />
-    <state width="1877" height="317" key="GridCell.Tab.0.left/0.0.1280.680/5760.0.1920.1040/2880.0.1920.1040@2880.0.1920.1040" timestamp="1623631883445" />
     <state width="1397" height="222" key="GridCell.Tab.0.left/0.0.1440.860@0.0.1440.860" timestamp="1621921329996" />
-    <state width="1877" height="317" key="GridCell.Tab.0.right" timestamp="1623631883446">
-      <screen x="2880" y="0" width="1920" height="1040" />
+    <state width="1877" height="383" key="GridCell.Tab.0.right" timestamp="1622163357295">
+      <screen x="-2880" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="383" key="GridCell.Tab.0.right/0.0.1280.680/-2880.0.1920.1040@-2880.0.1920.1040" timestamp="1622163357295" />
-    <state width="1877" height="317" key="GridCell.Tab.0.right/0.0.1280.680/5760.0.1920.1040/2880.0.1920.1040@2880.0.1920.1040" timestamp="1623631883446" />
     <state width="1397" height="222" key="GridCell.Tab.0.right/0.0.1440.860@0.0.1440.860" timestamp="1621921329996" />
     <state width="1877" height="192" key="GridCell.Tab.1.bottom" timestamp="1622160363164">
       <screen x="-2880" y="0" width="1920" height="1040" />
@@ -547,88 +464,38 @@
       <screen x="-2880" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="192" key="GridCell.Tab.1.right/0.0.1280.680/-2880.0.1920.1040@-2880.0.1920.1040" timestamp="1622160363163" />
-    <state x="3376" y="153" key="SettingsEditor" timestamp="1623621391302">
-      <screen x="2880" y="0" width="1920" height="1040" />
+    <state x="-2585" y="91" key="SettingsEditor" timestamp="1622073002275">
+      <screen x="-2880" y="0" width="1920" height="1040" />
     </state>
     <state x="-2585" y="91" key="SettingsEditor/0.0.1280.680/-2880.0.1920.1040@-2880.0.1920.1040" timestamp="1622073002275" />
-    <state x="3376" y="153" key="SettingsEditor/0.0.1280.680/5760.0.1920.1040/2880.0.1920.1040@2880.0.1920.1040" timestamp="1623621391302" />
     <state x="221" y="75" key="SettingsEditor/0.0.1440.860@0.0.1440.860" timestamp="1621916424730" />
-    <state x="3296" y="197" key="Vcs.Push.Dialog.v2" timestamp="1623632773825">
-      <screen x="2880" y="0" width="1920" height="1040" />
+    <state x="312" y="163" key="Vcs.Push.Dialog.v2" timestamp="1622072248157">
+      <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="3296" y="197" key="Vcs.Push.Dialog.v2/0.0.1280.680/5760.0.1920.1040/2880.0.1920.1040@2880.0.1920.1040" timestamp="1623632773825" />
     <state x="312" y="163" key="Vcs.Push.Dialog.v2/0.0.1440.860@0.0.1440.860" timestamp="1622072248157" />
     <state x="537" y="344" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1621922844017">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="537" y="344" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.860@0.0.1440.860" timestamp="1621922844017" />
-    <state x="5760" y="0" width="1581" height="972" key="dock-window-1" timestamp="1623614066395">
-      <screen x="5760" y="0" width="1920" height="1040" />
+    <state x="427" y="163" width="585" height="534" key="find.popup" timestamp="1621916175317">
+      <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="0" y="0" width="1294" height="766" key="dock-window-1/0.0.1280.680/2880.0.1920.1040/5760.0.1920.1040@2880.0.1920.1040" timestamp="1623552060469" />
-    <state x="5760" y="0" width="1581" height="972" key="dock-window-1/0.0.1280.680/5760.0.1920.1040/2880.0.1920.1040@2880.0.1920.1040" timestamp="1623614066395" />
-    <state x="5760" y="192" width="1542" height="745" maximized="true" key="dock-window-10" timestamp="1623626564933">
-      <screen x="5760" y="0" width="1920" height="1040" />
-    </state>
-    <state x="5760" y="192" width="1542" height="745" maximized="true" key="dock-window-10/0.0.1280.680/5760.0.1920.1040/2880.0.1920.1040@2880.0.1920.1040" timestamp="1623626564933" />
-    <state x="3272" y="0" width="1542" height="997" key="dock-window-11" timestamp="1623631511694">
-      <screen x="2880" y="0" width="1920" height="1040" />
-    </state>
-    <state x="3272" y="0" width="1542" height="997" key="dock-window-11/0.0.1280.680/5760.0.1920.1040/2880.0.1920.1040@2880.0.1920.1040" timestamp="1623631511694" />
-    <state x="6263" y="33" width="1542" height="997" key="dock-window-12" timestamp="1623631511694">
-      <screen x="5760" y="0" width="1920" height="1040" />
-    </state>
-    <state x="6263" y="33" width="1542" height="997" key="dock-window-12/0.0.1280.680/5760.0.1920.1040/2880.0.1920.1040@2880.0.1920.1040" timestamp="1623631511694" />
-    <state x="5760" y="0" width="1542" height="1027" key="dock-window-13" timestamp="1623632308666">
-      <screen x="5760" y="0" width="1920" height="1040" />
-    </state>
-    <state x="5760" y="0" width="1542" height="1027" key="dock-window-13/0.0.1280.680/5760.0.1920.1040/2880.0.1920.1040@2880.0.1920.1040" timestamp="1623632308666" />
-    <state x="5760" y="0" width="1581" height="997" key="dock-window-2" timestamp="1623615008035">
-      <screen x="5760" y="0" width="1920" height="1040" />
-    </state>
-    <state x="0" y="0" width="1294" height="717" key="dock-window-2/0.0.1280.680/2880.0.1920.1040/5760.0.1920.1040@2880.0.1920.1040" timestamp="1623554155267" />
-    <state x="5760" y="0" width="1581" height="997" key="dock-window-2/0.0.1280.680/5760.0.1920.1040/2880.0.1920.1040@2880.0.1920.1040" timestamp="1623615008035" />
-    <state x="3233" y="0" width="1581" height="997" key="dock-window-3" timestamp="1623615584217">
-      <screen x="2880" y="0" width="1920" height="1040" />
-    </state>
-    <state x="3233" y="0" width="1581" height="997" key="dock-window-3/0.0.1280.680/5760.0.1920.1040/2880.0.1920.1040@2880.0.1920.1040" timestamp="1623615584217" />
-    <state x="5880" y="233" width="1294" height="766" maximized="true" key="dock-window-4" timestamp="1623631511694">
-      <screen x="5760" y="0" width="1920" height="1040" />
-    </state>
-    <state x="5880" y="233" width="1294" height="766" maximized="true" key="dock-window-4/0.0.1280.680/5760.0.1920.1040/2880.0.1920.1040@2880.0.1920.1040" timestamp="1623631511694" />
-    <state x="0" y="0" width="500" height="500" key="dock-window-5" timestamp="1623615584217">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state x="0" y="0" width="500" height="500" key="dock-window-5/0.0.1280.680/5760.0.1920.1040/2880.0.1920.1040@2880.0.1920.1040" timestamp="1623615584217" />
-    <state x="0" y="0" width="1294" height="766" key="dock-window-6" timestamp="1623616396077">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state x="0" y="0" width="1294" height="766" key="dock-window-6/0.0.1280.680/5760.0.1920.1040/2880.0.1920.1040@2880.0.1920.1040" timestamp="1623616396077" />
-    <state x="0" y="0" width="1294" height="766" key="dock-window-7" timestamp="1623617759471">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state x="0" y="0" width="1294" height="766" key="dock-window-7/0.0.1280.680/5760.0.1920.1040/2880.0.1920.1040@2880.0.1920.1040" timestamp="1623617759471" />
-    <state x="0" y="0" width="1294" height="766" key="dock-window-8" timestamp="1623617759471">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state x="0" y="0" width="1294" height="766" key="dock-window-8/0.0.1280.680/5760.0.1920.1040/2880.0.1920.1040@2880.0.1920.1040" timestamp="1623617759471" />
-    <state x="5760" y="1" width="1542" height="804" maximized="true" key="dock-window-9" timestamp="1623624052026">
-      <screen x="5760" y="0" width="1920" height="1040" />
-    </state>
-    <state x="5760" y="1" width="1542" height="804" maximized="true" key="dock-window-9/0.0.1280.680/5760.0.1920.1040/2880.0.1920.1040@2880.0.1920.1040" timestamp="1623624052026" />
-    <state x="3805" y="205" width="780" height="646" key="find.popup" timestamp="1623612152802">
-      <screen x="2880" y="0" width="1920" height="1040" />
-    </state>
-    <state x="3805" y="205" width="780" height="646" key="find.popup/0.0.1280.680/5760.0.1920.1040/2880.0.1920.1040@2880.0.1920.1040" timestamp="1623612152802" />
     <state x="427" y="163" width="585" height="534" key="find.popup/0.0.1440.860@0.0.1440.860" timestamp="1621916175317" />
     <state x="376" y="195" width="672" height="677" key="run.anything.popup" timestamp="1621917370231">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="376" y="195" width="672" height="677" key="run.anything.popup/0.0.1440.860@0.0.1440.860" timestamp="1621917370231" />
-    <state x="3868" y="186" width="672" height="678" key="search.everywhere.popup" timestamp="1623539027367">
-      <screen x="2880" y="0" width="1920" height="1040" />
-    </state>
-    <state x="3868" y="186" width="672" height="678" key="search.everywhere.popup/0.0.1280.680/5760.0.1920.1040/2880.0.1920.1040@2880.0.1920.1040" timestamp="1623539027367" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/projeto/mercadoapp/adapter/CarrinhoAdapter.java</url>
+          <line>47</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/MercadoApp$MercadoApp.ic" NAME="MercadoApp Coverage Results" MODIFIED="1621916190965" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
