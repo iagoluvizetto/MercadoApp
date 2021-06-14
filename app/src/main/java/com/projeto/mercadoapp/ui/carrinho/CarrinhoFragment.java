@@ -1,36 +1,21 @@
 package com.projeto.mercadoapp.ui.carrinho;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.projeto.mercadoapp.R;
 import com.projeto.mercadoapp.adapter.CarrinhoAdapter;
-import com.projeto.mercadoapp.adapter.ProdutoAdapter;
 import com.projeto.mercadoapp.models.Carrinho;
-import com.projeto.mercadoapp.models.JsonPlaceHolderApi;
-import com.projeto.mercadoapp.models.Produto;
-import com.projeto.mercadoapp.ui.home.ProdutosFragment;
-
-import java.util.List;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 public class CarrinhoFragment extends Fragment {
 
@@ -41,6 +26,8 @@ public class CarrinhoFragment extends Fragment {
         private View view;
         private Context thisContext;
         private TextView textTotal;
+        //Alana
+        private Button finalizarCompra;
 
 
         // TODO: Rename and change types of parameters
@@ -96,9 +83,20 @@ public class CarrinhoFragment extends Fragment {
                     rvProdutos.setLayoutManager(llm);
                     CarrinhoAdapter carrinhoAdapter = new CarrinhoAdapter(getActivity());
                     rvProdutos.setAdapter(carrinhoAdapter);
-            return view;
 
+            //Alana
+            finalizarCompra = (Button) view.findViewById(R.id.bt_finalizar);
+            finalizarCompra.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v){
+                    Intent intent = new Intent(getActivity(), PagamentoActivity.class);
+                    intent.putExtra("Conferir Dados", "Conferir Dados");
+                    startActivity(intent);
+                }
+            });
+            return view;
         }
+
         public void atualizarTotal(){
             Carrinho carrinho = Carrinho.getInstancia();
             carrinho.setTextTotal(textTotal);
