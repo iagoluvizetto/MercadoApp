@@ -79,8 +79,7 @@ public class PerfilFragment extends Fragment {
 //                //fragmentTransaction.addToBackStack(DetalheFragment.class.getName());
 //                fragmentTransaction.commit();
 
-                FirebaseUser user = mFirebaseAuth.getCurrentUser();
-                updateUI(user);
+            abreLoginActivity();
 
             }
         });
