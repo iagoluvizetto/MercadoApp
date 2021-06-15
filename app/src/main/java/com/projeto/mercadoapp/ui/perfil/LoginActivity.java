@@ -17,6 +17,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.projeto.mercadoapp.models.Usuario;
+import com.projeto.mercadoapp.models.UsuarioSessao;
 import com.projeto.mercadoapp.ui.home.HomeFragment;
 import com.projeto.mercadoapp.ui.inicial.MainActivity;
 
@@ -60,6 +62,10 @@ public class LoginActivity extends AppCompatActivity {
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if(task.isSuccessful()){
                                     Toast.makeText(LoginActivity.this, "Cadastro Realizado com sucesso! Efetuando login...", Toast.LENGTH_SHORT).show();
+
+                                    Usuario usuario = new Usuario(email);
+                                    UsuarioSessao.saveUsuario(LoginActivity.this, usuario);
+
                                     startActivity(new Intent(getApplicationContext(), MainActivity.class));
                                 }else{
 

@@ -35,7 +35,6 @@ public class Carrinho {
 
     private Carrinho() {
 
-
     }
 
     public List<CarrinhoItem> getListaitens() {

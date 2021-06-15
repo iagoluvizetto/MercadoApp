@@ -6,12 +6,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.projeto.mercadoapp.R;
+import com.projeto.mercadoapp.models.Usuario;
+import com.projeto.mercadoapp.models.UsuarioSessao;
 
 public class PerfilFragment extends Fragment {
 
@@ -19,18 +22,17 @@ public class PerfilFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        boolean login = false;
-        if (login) {
-            exibePerfil();
+        View root = inflater.inflate(R.layout.fragment_perfil, container, false);
+
+        Usuario usuario = UsuarioSessao.loadUsuario(getActivity());
+
+
+        if (usuario != null) {
+            exibePerfil(root, usuario);
 
         } else {
             abreLoginActivity();
         }
-        perfilViewModel =
-                new ViewModelProvider(this).get(PerfilViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_perfil, container, false);
-
-
         return root;
     }
 
@@ -42,7 +44,9 @@ public class PerfilFragment extends Fragment {
 
     }
 
-    public void exibePerfil() {
+    public void exibePerfil(View root, Usuario usuario) {
+        TextView email = root.findViewById(R.id.tv_usuario_email);
+        email.setText(usuario.getEmail());
 
     }
 }
