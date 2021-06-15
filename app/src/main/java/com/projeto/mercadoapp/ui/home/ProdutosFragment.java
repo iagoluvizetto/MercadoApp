@@ -89,12 +89,10 @@ public class ProdutosFragment extends Fragment {
 
         //textView.setText(msg);
 
-
+        callJson(category, container);
 
         if(idProduto != 0){
             callJsonProduto(idProduto, container);
-        }else{
-            callJson(category, container);
         }
 
 
