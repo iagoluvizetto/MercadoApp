@@ -87,6 +87,7 @@ public class ProdutoAdapter extends RecyclerView.Adapter<ProdutoAdapter.ProdutoV
         DetalheFragment fragment = DetalheFragment.newInstance(produto);
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.frameLayoutProdutos, fragment);
+        fragmentTransaction.addToBackStack(DetalheFragment.class.getName());
         fragmentTransaction.commit();
         HorizontalScrollView view  =  activity.findViewById(R.id.horizontalScrollView);
         view.setVisibility(View.GONE);

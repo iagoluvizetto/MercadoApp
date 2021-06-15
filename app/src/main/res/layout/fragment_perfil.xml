@@ -6,6 +6,9 @@
     android:layout_height="match_parent"
     tools:context=".ui.perfil.PerfilFragment">
 
-
-
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerView"
+        android:name="com.projeto.mercadoapp.ui.perfil.PerfilFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

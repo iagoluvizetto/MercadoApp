@@ -6,11 +6,11 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_LOG_LEVEL" value="error" />
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="debug" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="AutoImportSettings">
-    <option name="autoReloadType" value="NONE" />
+    <option name="autoReloadType" value="ALL" />
   </component>
   <component name="BranchesTreeState">
     <expand>
@@ -32,23 +32,18 @@
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:master" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:taisi" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="158dfe22-3abb-4299-80ac-0cf5b0409d18" name="Default Changelist" comment="Acessando o produto a partir do link compartilhado pelo whats/telegram ~ instável">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/projeto/mercadoapp/ui/home/HomeFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/projeto/mercadoapp/ui/home/HomeFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/projeto/mercadoapp/ui/home/ProdutosFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/projeto/mercadoapp/ui/home/ProdutosFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/projeto/mercadoapp/ui/inicial/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/projeto/mercadoapp/ui/inicial/MainActivity.java" afterDir="false" />
-    </list>
+    <list default="true" id="158dfe22-3abb-4299-80ac-0cf5b0409d18" name="Default Changelist" comment="gitignore" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[VirtualDevicePath@C:\Users\Anderson\.android\avd\Nexus_5_API_30.avd]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[VirtualDevicePath@C:\Users\iagot\.android\avd\Pixel_4_XL_API_29.avd]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -66,6 +61,11 @@
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="MercadoApp" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="MercadoApp" type="f1a62948:ProjectNode" />
+                <item name="Run Configurations" type="7b0102dc:RunConfigurationsNode" />
               </path>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
@@ -105,13 +105,13 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="VirtualDevicePath@C:\Users\Anderson\.android\avd\Nexus_5_API_30.avd" />
-    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2021-06-15T20:40:44.069907700Z" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="VirtualDevicePath@C:\Users\iagot\.android\avd\Pixel_4_XL_API_29.avd" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2021-06-15T09:13:21.400109700Z" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="com.intellij.openapi.externalSystem.service.settings.ExternalSystemGroupConfigurable" value="ALL" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/app" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
+    <property name="settings.editor.selected.configurable" value="build.tools" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -120,6 +120,12 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\iagot\AndroidStudioProjects\MercadoApp\app" />
     </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="gradle android" />
+      <command value="gradle signingReport  " />
+    </option>
   </component>
   <component name="RunManager" selected="Android App.app">
     <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
@@ -187,6 +193,44 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MercadoApp [android]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="android" />
+          </list>
+        </option>
+        <option name="vmOptions" value="" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="MercadoApp [signingReport]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="signingReport" />
+          </list>
+        </option>
+        <option name="vmOptions" value="" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
     <configuration name="MercadoApp" type="GradleRunConfiguration" factoryName="Gradle">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -207,7 +251,15 @@
     <list>
       <item itemvalue="Android App.app" />
       <item itemvalue="Gradle.MercadoApp" />
+      <item itemvalue="Gradle.MercadoApp [android]" />
+      <item itemvalue="Gradle.MercadoApp [signingReport]" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.MercadoApp [signingReport]" />
+        <item itemvalue="Gradle.MercadoApp [android]" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -232,14 +284,7 @@
       <option name="project" value="LOCAL" />
       <updated>1622072243601</updated>
     </task>
-    <task id="LOCAL-00003" summary="Acessando o produto a partir do link compartilhado pelo whats/telegram ~ instável">
-      <created>1623741784647</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1623741784647</updated>
-    </task>
-    <option name="localTasksCounter" value="4" />
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -253,7 +298,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="master" />
+                        <option value="taisi" />
                       </list>
                     </value>
                   </entry>
@@ -270,24 +315,22 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Inclusão do firebase, incluindo opção inicial de tela de Login/Cadastro. Ainda será adaptado." />
     <MESSAGE value="Merge de todas as branchs" />
-    <MESSAGE value="Acessando o produto a partir do link compartilhado pelo whats/telegram ~ instável" />
-    <option name="LAST_COMMIT_MESSAGE" value="Acessando o produto a partir do link compartilhado pelo whats/telegram ~ instável" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge de todas as branchs" />
   </component>
   <component name="WindowStateProjectService">
     <state x="174" y="85" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1621915939825">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="174" y="85" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.860@0.0.1440.860" timestamp="1621915939825" />
-    <state x="575" y="187" key="#com.intellij.ide.util.MemberChooser" timestamp="1623737011540">
-      <screen x="0" y="0" width="1440" height="856" />
+    <state x="575" y="188" key="#com.intellij.ide.util.MemberChooser" timestamp="1623742457165">
+      <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="-2114" y="227" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680/-2880.0.1920.1040@-2880.0.1920.1040" timestamp="1622159519362" />
-    <state x="575" y="187" key="#com.intellij.ide.util.MemberChooser/0.0.1440.856/1440.0.1366.768@0.0.1440.856" timestamp="1623737011540" />
-    <state x="92" y="92" width="1256" height="673" key="AVDManager" timestamp="1623741056461">
-      <screen x="0" y="0" width="1440" height="856" />
+    <state x="575" y="188" key="#com.intellij.ide.util.MemberChooser/0.0.1440.860@0.0.1440.860" timestamp="1623742457165" />
+    <state x="92" y="92" width="1256" height="676" key="AVDManager" timestamp="1623749087771">
+      <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="92" y="92" width="1256" height="673" key="AVDManager/0.0.1440.856/1440.0.1366.768@0.0.1440.856" timestamp="1623741056461" />
-    <state x="92" y="92" width="1256" height="676" key="AVDManager/0.0.1440.860@0.0.1440.860" timestamp="1621917378734" />
+    <state x="92" y="92" width="1256" height="676" key="AVDManager/0.0.1440.860@0.0.1440.860" timestamp="1623749087771" />
     <state x="-2339" y="276" key="AndroidCreateResourceFileDialog" timestamp="1622160008826">
       <screen x="-2880" y="0" width="1920" height="1040" />
     </state>
@@ -300,30 +343,26 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="500" y="171" key="FileChooserDialogImpl/0.0.1440.860@0.0.1440.860" timestamp="1621916420106" />
-    <state width="1398" height="218" key="GridCell.Tab.0.bottom" timestamp="1623791653807">
-      <screen x="0" y="0" width="1440" height="856" />
+    <state width="1397" height="180" key="GridCell.Tab.0.bottom" timestamp="1623758517068">
+      <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state width="1877" height="383" key="GridCell.Tab.0.bottom/0.0.1280.680/-2880.0.1920.1040@-2880.0.1920.1040" timestamp="1622163357296" />
-    <state width="1398" height="218" key="GridCell.Tab.0.bottom/0.0.1440.856/1440.0.1366.768@0.0.1440.856" timestamp="1623791653807" />
-    <state width="1397" height="222" key="GridCell.Tab.0.bottom/0.0.1440.860@0.0.1440.860" timestamp="1621921329996" />
-    <state width="1398" height="218" key="GridCell.Tab.0.center" timestamp="1623791653807">
-      <screen x="0" y="0" width="1440" height="856" />
+    <state width="1397" height="180" key="GridCell.Tab.0.bottom/0.0.1440.860@0.0.1440.860" timestamp="1623758517068" />
+    <state width="1397" height="180" key="GridCell.Tab.0.center" timestamp="1623758517068">
+      <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state width="1877" height="383" key="GridCell.Tab.0.center/0.0.1280.680/-2880.0.1920.1040@-2880.0.1920.1040" timestamp="1622163357295" />
-    <state width="1398" height="218" key="GridCell.Tab.0.center/0.0.1440.856/1440.0.1366.768@0.0.1440.856" timestamp="1623791653807" />
-    <state width="1397" height="222" key="GridCell.Tab.0.center/0.0.1440.860@0.0.1440.860" timestamp="1621921329996" />
-    <state width="1398" height="218" key="GridCell.Tab.0.left" timestamp="1623791653806">
-      <screen x="0" y="0" width="1440" height="856" />
+    <state width="1397" height="180" key="GridCell.Tab.0.center/0.0.1440.860@0.0.1440.860" timestamp="1623758517068" />
+    <state width="1397" height="180" key="GridCell.Tab.0.left" timestamp="1623758517067">
+      <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state width="1877" height="383" key="GridCell.Tab.0.left/0.0.1280.680/-2880.0.1920.1040@-2880.0.1920.1040" timestamp="1622163357294" />
-    <state width="1398" height="218" key="GridCell.Tab.0.left/0.0.1440.856/1440.0.1366.768@0.0.1440.856" timestamp="1623791653806" />
-    <state width="1397" height="222" key="GridCell.Tab.0.left/0.0.1440.860@0.0.1440.860" timestamp="1621921329996" />
-    <state width="1398" height="218" key="GridCell.Tab.0.right" timestamp="1623791653807">
-      <screen x="0" y="0" width="1440" height="856" />
+    <state width="1397" height="180" key="GridCell.Tab.0.left/0.0.1440.860@0.0.1440.860" timestamp="1623758517067" />
+    <state width="1397" height="180" key="GridCell.Tab.0.right" timestamp="1623758517068">
+      <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state width="1877" height="383" key="GridCell.Tab.0.right/0.0.1280.680/-2880.0.1920.1040@-2880.0.1920.1040" timestamp="1622163357295" />
-    <state width="1398" height="218" key="GridCell.Tab.0.right/0.0.1440.856/1440.0.1366.768@0.0.1440.856" timestamp="1623791653807" />
-    <state width="1397" height="222" key="GridCell.Tab.0.right/0.0.1440.860@0.0.1440.860" timestamp="1621921329996" />
+    <state width="1397" height="180" key="GridCell.Tab.0.right/0.0.1440.860@0.0.1440.860" timestamp="1623758517068" />
     <state width="1877" height="192" key="GridCell.Tab.1.bottom" timestamp="1622160363164">
       <screen x="-2880" y="0" width="1920" height="1040" />
     </state>
@@ -340,15 +379,22 @@
       <screen x="-2880" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="192" key="GridCell.Tab.1.right/0.0.1280.680/-2880.0.1920.1040@-2880.0.1920.1040" timestamp="1622160363163" />
-    <state x="-2585" y="91" key="SettingsEditor" timestamp="1622073002275">
-      <screen x="-2880" y="0" width="1920" height="1040" />
+    <state x="300" y="173" key="IDE.errors.dialog" timestamp="1623744182098">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="300" y="173" key="IDE.errors.dialog/0.0.1440.860@0.0.1440.860" timestamp="1623744182098" />
+    <state x="221" y="75" key="SettingsEditor" timestamp="1623748871386">
+      <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="-2585" y="91" key="SettingsEditor/0.0.1280.680/-2880.0.1920.1040@-2880.0.1920.1040" timestamp="1622073002275" />
-    <state x="221" y="75" key="SettingsEditor/0.0.1440.860@0.0.1440.860" timestamp="1621916424730" />
-    <state x="312" y="162" key="Vcs.Push.Dialog.v2" timestamp="1623741855799">
-      <screen x="0" y="0" width="1440" height="856" />
+    <state x="221" y="75" key="SettingsEditor/0.0.1440.860@0.0.1440.860" timestamp="1623748871386" />
+    <state width="498" height="488" key="SwitcherDM" timestamp="1623749957912">
+      <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="312" y="162" key="Vcs.Push.Dialog.v2/0.0.1440.856/1440.0.1366.768@0.0.1440.856" timestamp="1623741855799" />
+    <state width="498" height="488" key="SwitcherDM/0.0.1440.860@0.0.1440.860" timestamp="1623749957912" />
+    <state x="312" y="163" key="Vcs.Push.Dialog.v2" timestamp="1622072248157">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
     <state x="312" y="163" key="Vcs.Push.Dialog.v2/0.0.1440.860@0.0.1440.860" timestamp="1622072248157" />
     <state x="537" y="344" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1621922844017">
       <screen x="0" y="0" width="1440" height="860" />
@@ -358,10 +404,14 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="427" y="163" width="585" height="534" key="find.popup/0.0.1440.860@0.0.1440.860" timestamp="1621916175317" />
-    <state x="376" y="195" width="672" height="677" key="run.anything.popup" timestamp="1621917370231">
+    <state x="376" y="195" width="672" height="677" key="run.anything.popup" timestamp="1623746979079">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="376" y="195" width="672" height="677" key="run.anything.popup/0.0.1440.860@0.0.1440.860" timestamp="1621917370231" />
+    <state x="376" y="195" width="672" height="677" key="run.anything.popup/0.0.1440.860@0.0.1440.860" timestamp="1623746979079" />
+    <state x="383" y="180" width="672" height="678" key="search.everywhere.popup" timestamp="1623745118472">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="383" y="180" width="672" height="678" key="search.everywhere.popup/0.0.1440.860@0.0.1440.860" timestamp="1623745118472" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -370,6 +420,11 @@
           <url>file://$PROJECT_DIR$/app/src/main/java/com/projeto/mercadoapp/adapter/CarrinhoAdapter.java</url>
           <line>47</line>
           <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/projeto/mercadoapp/ui/perfil/CadastroActivity.java</url>
+          <line>14</line>
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
