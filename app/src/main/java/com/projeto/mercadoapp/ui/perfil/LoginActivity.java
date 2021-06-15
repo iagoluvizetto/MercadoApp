@@ -7,6 +7,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -40,7 +42,6 @@ public class LoginActivity extends AppCompatActivity {
     private FirebaseAuth.AuthStateListener authStateListener;
     private AccessTokenTracker accessTokenTracker;
     private TextView textViewUsuario;
-    private ImageView ìmagemPerfil;
     private LoginButton loginButton;
     private String TAG = "FacebookAuthenticon";
     private ImageView imagemPerfil;
@@ -48,12 +49,17 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstance){
         super.onCreate(savedInstance);
+        setContentView(R.layout.activity_login);
+
         mFirebaseAuth = FirebaseAuth.getInstance();
         FacebookSdk.sdkInitialize(getApplicationContext());
 
-        Log.d(TAG,"Iniciou! ");
+        Button btnSair = findViewById(R.id.button_sair);
+        btnSair.setVisibility(View.INVISIBLE);
 
-        ìmagemPerfil = findViewById(R.id.perfil);
+        Log.d(TAG,"Iniciou! ");
+        textViewUsuario  =findViewById(R.id.nome);
+        imagemPerfil = findViewById(R.id.perfil);
         loginButton = findViewById(R.id.login_button);
         loginButton.setReadPermissions("email", "public_profile");
         mCallbackManager = CallbackManager.Factory.create();
@@ -67,6 +73,7 @@ public class LoginActivity extends AppCompatActivity {
 
             @Override
             public void onCancel() {
+
                 Log.d(TAG,"Login Cancelado! ");
             }
 
@@ -128,15 +135,16 @@ public class LoginActivity extends AppCompatActivity {
 
     private void updateUI(FirebaseUser user) {
         if(user!=null){
-            textViewUsuario.setText(user.getDisplayName());
-            if(user.getPhotoUrl()!=null){
-                String ImagemURL=user.getPhotoUrl().toString();
-                ImagemURL = ImagemURL + "?type=large";
-                Picasso.get().load(ImagemURL).into(imagemPerfil);
-            }else{
-                textViewUsuario.setText("Deslogado!");
-                imagemPerfil.setImageResource(R.drawable.com_facebook_profile_picture_blank_portrait);
-            }
+            finish();
+//            textViewUsuario.setText(user.getDisplayName());
+//            if(user.getPhotoUrl()!=null){
+//                String ImagemURL=user.getPhotoUrl().toString();
+//                ImagemURL = ImagemURL + "?type=large";
+//                Picasso.get().load(ImagemURL).into(imagemPerfil);
+//            }else{
+//                textViewUsuario.setText("Deslogado!");
+//                imagemPerfil.setImageResource(R.drawable.com_facebook_profile_picture_blank_portrait);
+//            }
         }
     }
 
