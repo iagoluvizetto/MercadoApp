@@ -89,10 +89,12 @@ public class ProdutosFragment extends Fragment {
 
         //textView.setText(msg);
 
-        callJson(category, container);
+
 
         if(idProduto != 0){
             callJsonProduto(idProduto, container);
+        }else{
+            callJson(category, container);
         }
 
 
@@ -169,12 +171,6 @@ public class ProdutosFragment extends Fragment {
                 fragmentTransaction.commit();
                 HorizontalScrollView view  =  activity.findViewById(R.id.horizontalScrollView);
                 view.setVisibility(View.GONE);
-
-//                GridLayoutManager glm = new GridLayoutManager(thisContext, 2);
-//                RecyclerView rvProdutos = viewGroup.findViewById(R.id.rvProdutos);
-//                rvProdutos.setLayoutManager(glm);
-//                ProdutoAdapter produtoAdapter = new ProdutoAdapter(List<produto>, getActivity());
-//                rvProdutos.setAdapter(produtoAdapter);
             }
 
             @Override

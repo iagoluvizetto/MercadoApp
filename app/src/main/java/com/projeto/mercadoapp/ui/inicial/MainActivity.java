@@ -31,15 +31,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-//        Intent intent = getIntent();
-//        String action = intent.getAction();
-//        String data = intent.getDataString();
-//
-//
-//        if(action != null) {
-//            Toast.makeText(getApplicationContext(), data, Toast.LENGTH_SHORT).show();
-//        }
-
         instance = getApplicationContext();
 
         setContentView(R.layout.activity_main);
@@ -98,11 +89,11 @@ public class MainActivity extends AppCompatActivity {
 
         Intent shareIntent = new Intent(Intent.ACTION_SEND);
         shareIntent.setType("text/plain");
-        shareIntent.setPackage("com.whatsapp");
-//        shareIntent.setPackage("org.telegram.messenger");
+//        shareIntent.setPackage("com.whatsapp");
+        shareIntent.setPackage("org.telegram.messenger");
         shareIntent.putExtra(Intent.EXTRA_SUBJECT, "MercadoApp");
         String shareMessage= "\nVeja esta oferta no MercadoApp: \n" + produto.getNome() + "  " + "Preço: " + produto.getPrecoStr()+ "\n";
-        shareMessage = shareMessage + "http://mercado-api-mobile.herokuapp.com/" + produto.getId();
+        shareMessage = shareMessage + "http://mercado-api-mobile.herokuapp.com/produtos/" + produto.getId();
         shareIntent.putExtra(Intent.EXTRA_TEXT, shareMessage);
 
         try {

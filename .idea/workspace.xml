@@ -37,31 +37,11 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="158dfe22-3abb-4299-80ac-0cf5b0409d18" name="Default Changelist" comment="gitignore">
-      <change beforePath="$PROJECT_DIR$/.gradle/6.7.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.7.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.7.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.7.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.7.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.7.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7.1/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.7.1/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7.1/javaCompile/jarAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.7.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7.1/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.7.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7.1/javaCompile/taskHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_volley_volley_1_1_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_volley_volley_1_1_1_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/app/MercadoApp.app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/MercadoApp.app.iml" afterDir="false" />
+    <list default="true" id="158dfe22-3abb-4299-80ac-0cf5b0409d18" name="Default Changelist" comment="Acessando o produto a partir do link compartilhado pelo whats/telegram ~ instável">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/projeto/mercadoapp/adapter/ProdutoAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/projeto/mercadoapp/adapter/ProdutoAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/projeto/mercadoapp/models/JsonPlaceHolderApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/projeto/mercadoapp/models/JsonPlaceHolderApi.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/projeto/mercadoapp/ui/home/HomeFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/projeto/mercadoapp/ui/home/HomeFragment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/projeto/mercadoapp/ui/home/ProdutosFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/projeto/mercadoapp/ui/home/ProdutosFragment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/projeto/mercadoapp/ui/inicial/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/projeto/mercadoapp/ui/inicial/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,7 +106,7 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="VirtualDevicePath@C:\Users\Anderson\.android\avd\Nexus_5_API_30.avd" />
-    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2021-06-15T06:39:55.580357300Z" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2021-06-15T20:40:44.069907700Z" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="com.intellij.openapi.externalSystem.service.settings.ExternalSystemGroupConfigurable" value="ALL" />
@@ -252,7 +232,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622072243601</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Acessando o produto a partir do link compartilhado pelo whats/telegram ~ instável">
+      <created>1623741784647</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1623741784647</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -283,7 +270,8 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Inclusão do firebase, incluindo opção inicial de tela de Login/Cadastro. Ainda será adaptado." />
     <MESSAGE value="Merge de todas as branchs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge de todas as branchs" />
+    <MESSAGE value="Acessando o produto a partir do link compartilhado pelo whats/telegram ~ instável" />
+    <option name="LAST_COMMIT_MESSAGE" value="Acessando o produto a partir do link compartilhado pelo whats/telegram ~ instável" />
   </component>
   <component name="WindowStateProjectService">
     <state x="174" y="85" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1621915939825">
@@ -312,29 +300,29 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="500" y="171" key="FileChooserDialogImpl/0.0.1440.860@0.0.1440.860" timestamp="1621916420106" />
-    <state width="1398" height="218" key="GridCell.Tab.0.bottom" timestamp="1623740937560">
+    <state width="1398" height="218" key="GridCell.Tab.0.bottom" timestamp="1623791653807">
       <screen x="0" y="0" width="1440" height="856" />
     </state>
     <state width="1877" height="383" key="GridCell.Tab.0.bottom/0.0.1280.680/-2880.0.1920.1040@-2880.0.1920.1040" timestamp="1622163357296" />
-    <state width="1398" height="218" key="GridCell.Tab.0.bottom/0.0.1440.856/1440.0.1366.768@0.0.1440.856" timestamp="1623740937560" />
+    <state width="1398" height="218" key="GridCell.Tab.0.bottom/0.0.1440.856/1440.0.1366.768@0.0.1440.856" timestamp="1623791653807" />
     <state width="1397" height="222" key="GridCell.Tab.0.bottom/0.0.1440.860@0.0.1440.860" timestamp="1621921329996" />
-    <state width="1398" height="218" key="GridCell.Tab.0.center" timestamp="1623740937560">
+    <state width="1398" height="218" key="GridCell.Tab.0.center" timestamp="1623791653807">
       <screen x="0" y="0" width="1440" height="856" />
     </state>
     <state width="1877" height="383" key="GridCell.Tab.0.center/0.0.1280.680/-2880.0.1920.1040@-2880.0.1920.1040" timestamp="1622163357295" />
-    <state width="1398" height="218" key="GridCell.Tab.0.center/0.0.1440.856/1440.0.1366.768@0.0.1440.856" timestamp="1623740937560" />
+    <state width="1398" height="218" key="GridCell.Tab.0.center/0.0.1440.856/1440.0.1366.768@0.0.1440.856" timestamp="1623791653807" />
     <state width="1397" height="222" key="GridCell.Tab.0.center/0.0.1440.860@0.0.1440.860" timestamp="1621921329996" />
-    <state width="1398" height="218" key="GridCell.Tab.0.left" timestamp="1623740937560">
+    <state width="1398" height="218" key="GridCell.Tab.0.left" timestamp="1623791653806">
       <screen x="0" y="0" width="1440" height="856" />
     </state>
     <state width="1877" height="383" key="GridCell.Tab.0.left/0.0.1280.680/-2880.0.1920.1040@-2880.0.1920.1040" timestamp="1622163357294" />
-    <state width="1398" height="218" key="GridCell.Tab.0.left/0.0.1440.856/1440.0.1366.768@0.0.1440.856" timestamp="1623740937560" />
+    <state width="1398" height="218" key="GridCell.Tab.0.left/0.0.1440.856/1440.0.1366.768@0.0.1440.856" timestamp="1623791653806" />
     <state width="1397" height="222" key="GridCell.Tab.0.left/0.0.1440.860@0.0.1440.860" timestamp="1621921329996" />
-    <state width="1398" height="218" key="GridCell.Tab.0.right" timestamp="1623740937560">
+    <state width="1398" height="218" key="GridCell.Tab.0.right" timestamp="1623791653807">
       <screen x="0" y="0" width="1440" height="856" />
     </state>
     <state width="1877" height="383" key="GridCell.Tab.0.right/0.0.1280.680/-2880.0.1920.1040@-2880.0.1920.1040" timestamp="1622163357295" />
-    <state width="1398" height="218" key="GridCell.Tab.0.right/0.0.1440.856/1440.0.1366.768@0.0.1440.856" timestamp="1623740937560" />
+    <state width="1398" height="218" key="GridCell.Tab.0.right/0.0.1440.856/1440.0.1366.768@0.0.1440.856" timestamp="1623791653807" />
     <state width="1397" height="222" key="GridCell.Tab.0.right/0.0.1440.860@0.0.1440.860" timestamp="1621921329996" />
     <state width="1877" height="192" key="GridCell.Tab.1.bottom" timestamp="1622160363164">
       <screen x="-2880" y="0" width="1920" height="1040" />
@@ -357,9 +345,10 @@
     </state>
     <state x="-2585" y="91" key="SettingsEditor/0.0.1280.680/-2880.0.1920.1040@-2880.0.1920.1040" timestamp="1622073002275" />
     <state x="221" y="75" key="SettingsEditor/0.0.1440.860@0.0.1440.860" timestamp="1621916424730" />
-    <state x="312" y="163" key="Vcs.Push.Dialog.v2" timestamp="1622072248157">
-      <screen x="0" y="0" width="1440" height="860" />
+    <state x="312" y="162" key="Vcs.Push.Dialog.v2" timestamp="1623741855799">
+      <screen x="0" y="0" width="1440" height="856" />
     </state>
+    <state x="312" y="162" key="Vcs.Push.Dialog.v2/0.0.1440.856/1440.0.1366.768@0.0.1440.856" timestamp="1623741855799" />
     <state x="312" y="163" key="Vcs.Push.Dialog.v2/0.0.1440.860@0.0.1440.860" timestamp="1622072248157" />
     <state x="537" y="344" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1621922844017">
       <screen x="0" y="0" width="1440" height="860" />

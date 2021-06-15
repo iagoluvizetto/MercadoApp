@@ -84,8 +84,10 @@ public class HomeFragment
         Intent intent = getActivity().getIntent();
         String action = intent.getAction();
         String data = intent.getDataString();
+
         if(action != null && loadFromExternalLink) {
-            int idProduto =  Character.getNumericValue(data.charAt(data.length() - 1));
+            String[] parts = data.split("/");
+            int idProduto = Integer.parseInt(parts[4]);
             setProdutoFragment(new ProdutosFragment(), idProduto);
             loadFromExternalLink = false;
         }
