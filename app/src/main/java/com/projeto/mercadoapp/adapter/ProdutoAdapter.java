@@ -66,18 +66,12 @@ public class ProdutoAdapter extends RecyclerView.Adapter<ProdutoAdapter.ProdutoV
         CardView card = holder.viewProduto.findViewById(R.id.cv_produto);
         Glide.with(holder.itemView)
                 .load("https://" + produto.getImg())
-                //.load("https://homepages.cae.wisc.edu/~ece533/images/zelda.png")
-                //.error(R.drawable.ic_loading)
-                //.placeholder(R.drawable.ic_loading)
                 .into(imageView);
         imageView.setAdjustViewBounds(true);
-//        imageView.setMaxHeight(200);
-//        imageView.setMaxWidth(200);
 
         card.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 abreDetalheFragment(produto);
             }
         });
@@ -85,8 +79,6 @@ public class ProdutoAdapter extends RecyclerView.Adapter<ProdutoAdapter.ProdutoV
     }
 
     private void abreDetalheFragment(Produto produto) {
-
-
         Bundle bundle = new Bundle();
         bundle.putParcelable("produto", produto);
         Carrinho.getInstancia().setProdutoDetalhe(produto);

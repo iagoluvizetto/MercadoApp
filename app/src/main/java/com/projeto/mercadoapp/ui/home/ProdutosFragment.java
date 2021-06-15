@@ -1,9 +1,13 @@
 package com.projeto.mercadoapp.ui.home;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -12,6 +16,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -20,6 +25,7 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.projeto.mercadoapp.R;
 import com.projeto.mercadoapp.adapter.ProdutoAdapter;
+import com.projeto.mercadoapp.models.Carrinho;
 import com.projeto.mercadoapp.models.JsonPlaceHolderApi;
 import com.projeto.mercadoapp.models.Produto;
 
@@ -30,11 +36,6 @@ import retrofit2.Callback;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link ProdutosFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class ProdutosFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
@@ -43,6 +44,7 @@ public class ProdutosFragment extends Fragment {
     private static final String ARG_PARAM2 = "param2";
     private View view;
     private Context thisContext;
+    private FragmentActivity activity;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -52,14 +54,6 @@ public class ProdutosFragment extends Fragment {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment ProdutosFragment.
-     */
     // TODO: Rename and change types and number of parameters
     public static ProdutosFragment newInstance(String param1, String param2) {
         ProdutosFragment fragment = new ProdutosFragment();
@@ -85,6 +79,8 @@ public class ProdutosFragment extends Fragment {
 
         Bundle bundle = this.getArguments();
         String category = bundle.getString("category");
+        int idProduto = 0;
+        idProduto = bundle.getInt("idProduto");
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_produtos, container, false);
         thisContext = container.getContext();
@@ -94,6 +90,12 @@ public class ProdutosFragment extends Fragment {
         //textView.setText(msg);
 
         callJson(category, container);
+
+        if(idProduto != 0){
+            callJsonProduto(idProduto, container);
+        }
+
+
 
         return view;
 
@@ -125,24 +127,58 @@ public class ProdutosFragment extends Fragment {
                 rvProdutos.setLayoutManager(glm);
                 ProdutoAdapter produtoAdapter = new ProdutoAdapter(produtos, getActivity());
                 rvProdutos.setAdapter(produtoAdapter);
-//                LinearLayout linearLayout = view.findViewById(R.id.listagemProdutos);
-//                for(Produto p : produtos){
-//                    TextView textView = new TextView(view.getContext());
-//                    ImageView imageView = new ImageView(view.getContext());
-//                    textView.setText(p.getNome());
-//                    Glide.with(view.getContext()).load("https://" + p.getImg()).into(imageView);
-//                    imageView.setAdjustViewBounds(true);
-//                    imageView.setMaxHeight(200);
-//                    imageView.setMaxWidth(200);
-//                    linearLayout.addView(textView);
-//                    linearLayout.addView(imageView);
-//
-//                }
-
             }
 
             @Override
             public void onFailure(Call<List<Produto>> call, Throwable t) {
+                Log.e("deuruim", t.getMessage());
+            }
+        });
+    }
+
+    public void callJsonProduto(int idProduto, ViewGroup viewGroup) {
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("https://mercado-api-mobile.herokuapp.com/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        JsonPlaceHolderApi jsonPlaceHolderApi = retrofit.create(JsonPlaceHolderApi.class);
+
+        Call<Produto> call = jsonPlaceHolderApi.getProduto(idProduto);
+        call.enqueue(new Callback<Produto>() {
+
+            @Override
+            public void onResponse(Call<Produto> call, retrofit2.Response<Produto> response) {
+                if(!response.isSuccessful()) {
+                    Log.e("deuruim", response.message());
+                    return;
+                }
+                Log.i("deuboa", "ok");
+
+                Produto produto = response.body();
+
+                Bundle bundle = new Bundle();
+                bundle.putParcelable("produto", produto);
+                Carrinho.getInstancia().setProdutoDetalhe(produto);
+                activity = getActivity();
+                FragmentManager fragmentManager = activity.getSupportFragmentManager();
+
+                DetalheFragment fragment = DetalheFragment.newInstance(produto);
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.frameLayoutProdutos, fragment);
+                fragmentTransaction.commit();
+                HorizontalScrollView view  =  activity.findViewById(R.id.horizontalScrollView);
+                view.setVisibility(View.GONE);
+
+//                GridLayoutManager glm = new GridLayoutManager(thisContext, 2);
+//                RecyclerView rvProdutos = viewGroup.findViewById(R.id.rvProdutos);
+//                rvProdutos.setLayoutManager(glm);
+//                ProdutoAdapter produtoAdapter = new ProdutoAdapter(List<produto>, getActivity());
+//                rvProdutos.setAdapter(produtoAdapter);
+            }
+
+            @Override
+            public void onFailure(Call<Produto> call, Throwable t) {
                 Log.e("deuruim", t.getMessage());
             }
         });

@@ -13,4 +13,7 @@ public interface JsonPlaceHolderApi {
 
     @GET("produtos")
     Call<List<Produto>> getProdutosByCategory(@Query("categoria") String category);
+
+    @GET("produtos/{id}")
+    Call<Produto> getProduto(@Path("id") int id);
 }

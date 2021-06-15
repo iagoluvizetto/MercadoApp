@@ -2,9 +2,11 @@ package com.projeto.mercadoapp.ui.inicial;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.google.android.material.badge.BadgeDrawable;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -28,6 +30,15 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+//        Intent intent = getIntent();
+//        String action = intent.getAction();
+//        String data = intent.getDataString();
+//
+//
+//        if(action != null) {
+//            Toast.makeText(getApplicationContext(), data, Toast.LENGTH_SHORT).show();
+//        }
 
         instance = getApplicationContext();
 
@@ -88,9 +99,10 @@ public class MainActivity extends AppCompatActivity {
         Intent shareIntent = new Intent(Intent.ACTION_SEND);
         shareIntent.setType("text/plain");
         shareIntent.setPackage("com.whatsapp");
+//        shareIntent.setPackage("org.telegram.messenger");
         shareIntent.putExtra(Intent.EXTRA_SUBJECT, "MercadoApp");
         String shareMessage= "\nVeja esta oferta no MercadoApp: \n" + produto.getNome() + "  " + "Preço: " + produto.getPrecoStr()+ "\n";
-        shareMessage = shareMessage + "https://www.mercadoapp.com.br/produto/" + produto.getId();
+        shareMessage = shareMessage + "http://mercado-api-mobile.herokuapp.com/" + produto.getId();
         shareIntent.putExtra(Intent.EXTRA_TEXT, shareMessage);
 
         try {

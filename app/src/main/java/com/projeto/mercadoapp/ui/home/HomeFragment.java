@@ -2,11 +2,13 @@ package com.projeto.mercadoapp.ui.home;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.HorizontalScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,6 +22,8 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.projeto.mercadoapp.R;
+import com.projeto.mercadoapp.models.Carrinho;
+import com.projeto.mercadoapp.models.Produto;
 
 public class HomeFragment
         extends Fragment
@@ -34,12 +38,12 @@ public class HomeFragment
     private Button carnesButton;
     private Button bebidasButton;
     private Button higieneButton;
+    private static boolean loadFromExternalLink = true;
 
     @Override
     public void onCreate(@Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(false);
-
     }
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -77,7 +81,14 @@ public class HomeFragment
             }
         });
 
-
+        Intent intent = getActivity().getIntent();
+        String action = intent.getAction();
+        String data = intent.getDataString();
+        if(action != null && loadFromExternalLink) {
+            int idProduto =  Character.getNumericValue(data.charAt(data.length() - 1));
+            setProdutoFragment(new ProdutosFragment(), idProduto);
+            loadFromExternalLink = false;
+        }
 
         return root;
     }
@@ -167,6 +178,19 @@ public class HomeFragment
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.frameLayoutProdutos, fragment);
         fragmentTransaction.commit();
+    }
+
+    private void setProdutoFragment(Fragment fragment, int idProduto) {
+        Bundle bundle = new Bundle();
+        String cat = "hortifruti";
+        bundle.putString("category", cat);
+        bundle.putInt("idProduto", idProduto);
+        FragmentManager fragmentManager = productFragmentContext.getSupportFragmentManager();
+        fragment.setArguments(bundle);
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.frameLayoutProdutos, fragment);
+        fragmentTransaction.commit();
+
     }
 
 }

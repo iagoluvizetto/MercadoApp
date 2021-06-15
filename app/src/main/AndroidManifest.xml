@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.projeto.mercadoapp">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -14,7 +15,17 @@
         android:usesCleartextTraffic="true">
         <activity android:name=".ui.perfil.CadastroActivity"></activity>
         <activity android:name=".ui.perfil.LoginActivity"></activity>
-        <activity android:name=".ui.inicial.MainActivity"/>
+        <activity android:name=".ui.inicial.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:host="www.mercado-api-mobile.herokuapp.com" android:scheme="http" />
+                <data android:host="mercado-api-mobile.herokuapp.com" android:scheme="http" />
+                <data android:host="www.mercado-api-mobile.herokuapp.com" android:scheme="https" />
+                <data android:host="mercado-api-mobile.herokuapp.com" android:scheme="http" />
+            </intent-filter>
+        </activity>
         <activity android:name=".ui.carrinho.PagamentoActivity" />
 
         <activity
@@ -22,7 +33,6 @@
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
                 <category android:name="android.intent.category.BROWSABLE" />
             </intent-filter>
