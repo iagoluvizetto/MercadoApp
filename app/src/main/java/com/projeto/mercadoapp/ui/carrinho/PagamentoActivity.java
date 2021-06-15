@@ -1,5 +1,7 @@
 package com.projeto.mercadoapp.ui.carrinho;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -8,9 +10,14 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.projeto.mercadoapp.R;
+import com.projeto.mercadoapp.ui.home.HomeFragment;
+import com.projeto.mercadoapp.ui.inicial.MainActivity;
+import com.projeto.mercadoapp.ui.perfil.LoginActivity;
+import com.projeto.mercadoapp.models.Carrinho;
 
 
 public class PagamentoActivity extends AppCompatActivity {
@@ -30,14 +37,6 @@ public class PagamentoActivity extends AppCompatActivity {
 
         Bundle bundle = getIntent().getExtras();
 
-        //concluirPagamento.setOnClickListener(new View.OnClickListener(){
-        //    public void onClick(View v){
-        //        int radioId = radioGroup.getCheckedRadioButtonId();
-        //       radioButton = findViewById(radioId);
-        //    }
-        //});
-        //Alana
-
         concluirPagamento.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v){
@@ -52,20 +51,26 @@ public class PagamentoActivity extends AppCompatActivity {
                     Toast.makeText(PagamentoActivity.this, "Preencha os campos acima", Toast.LENGTH_SHORT).show();
                 } else if (dinheiro.isChecked() && valor.isEmpty()) {
                     Toast.makeText(PagamentoActivity.this, "Preencha o valor", Toast.LENGTH_SHORT).show();
-                }
+                } else
+                    Toast.makeText(PagamentoActivity.this, "Pedido Finalizado", Toast.LENGTH_SHORT).show();
+
+                zerarCarrinho();
+
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
+
+
+
+//                concluirPagamento.setOnClickListener(new View.OnClickListener() {
+//                    @Override
+//                    public void onClick(View v){
+//                        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+//                        startActivity(intent);
+//                   }
+//                });
             }
         });
     }
-
-
-    //public void onClick(View v){
-    //    int radioId = radioGroup.getCheckedRadioButtonId();
-    //    radioButton = findViewById(radioId);
-
-    //    if (!radioButton.isChecked()){
-    //        Toast.makeText(PagamentoActivity.this, "Selecione um método de pagamento", Toast.LENGTH_SHORT).show();
-    //    }
-    //}
 
     private void inicializarComponentes(){
         campoCep = findViewById(R.id.edtCep);
@@ -79,6 +84,12 @@ public class PagamentoActivity extends AppCompatActivity {
         dinheiro = findViewById(R.id.radioButtonDinheiro);
         campoValor = findViewById(R.id.edtValor);
     }
+
+    public void zerarCarrinho(){
+        Carrinho carrinho = Carrinho.getInstancia();
+        carrinho.removerTodos();
+    }
+
 }
 
 

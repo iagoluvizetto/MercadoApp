@@ -86,6 +86,7 @@ public class Carrinho {
         }
         atualizarItens();
     }
+
     public String getValorTotalStr() {
         Locale localeBR = new Locale( "pt", "BR" );
         NumberFormat dinheiroBR = NumberFormat.getCurrencyInstance(localeBR);
@@ -160,6 +161,11 @@ public class Carrinho {
 
         editor.apply();
 
+    }
+
+    public void removerTodos(){
+        listaitens.clear();
+        atualizarItens();
     }
 }
 

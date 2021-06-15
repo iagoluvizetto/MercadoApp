@@ -51,6 +51,7 @@ public class HomeFragment
 
         thisContext = container.getContext();
 
+
         //final TextView textView = root.findViewById(R.id.text_home);
 
         hortifrutiButton = root.findViewById(R.id.hortifrutiButton);

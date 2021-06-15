@@ -84,7 +84,7 @@ public class CarrinhoFragment extends Fragment {
                     CarrinhoAdapter carrinhoAdapter = new CarrinhoAdapter(getActivity());
                     rvProdutos.setAdapter(carrinhoAdapter);
 
-            //Alana
+
             finalizarCompra = (Button) view.findViewById(R.id.bt_finalizar);
             finalizarCompra.setOnClickListener(new View.OnClickListener() {
                 @Override
