@@ -1,102 +1,162 @@
 package com.projeto.mercadoapp.ui.perfil;
-
+//Android import
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Switch;
+import android.util.Log;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
-
-import com.projeto.mercadoapp.R;
-import com.projeto.mercadoapp.adapter.FirebaseAdapter;
+//facebook import
+import com.facebook.AccessToken;
+import com.facebook.AccessTokenTracker;
+import com.facebook.FacebookCallback;
+import com.facebook.FacebookException;
+import com.facebook.FacebookSdk;
+import com.facebook.login.LoginResult;
+import com.facebook.login.widget.LoginButton;
+import com.facebook.CallbackManager;
+//Tasks import
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
+//Firebase import
+import com.google.firebase.auth.FacebookAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
-import com.projeto.mercadoapp.models.Usuario;
-import com.projeto.mercadoapp.models.UsuarioSessao;
-import com.projeto.mercadoapp.ui.home.HomeFragment;
-import com.projeto.mercadoapp.ui.inicial.MainActivity;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.AuthCredential;
+import com.google.firebase.auth.AuthResult;
+import com.squareup.picasso.Picasso;
+
+import com.projeto.mercadoapp.R;
+
+import org.jetbrains.annotations.NotNull;
 
 public class LoginActivity extends AppCompatActivity {
-
-    private Button botaoLogar;
-    private EditText campoEmail, campoSenha;
-    private Switch tipoAcesso;
-    private FirebaseAuth autenticacao;
+    private CallbackManager mCallbackManager;
+    private FirebaseAuth mFirebaseAuth;
+    private FirebaseAuth.AuthStateListener authStateListener;
+    private AccessTokenTracker accessTokenTracker;
+    private TextView textViewUsuario;
+    private ImageView ìmagemPerfil;
+    private LoginButton loginButton;
+    private String TAG = "FacebookAuthenticon";
+    private ImageView imagemPerfil;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
-        getSupportActionBar().hide();
-        InicializarComponentes();
+    protected void onCreate(Bundle savedInstance){
+        super.onCreate(savedInstance);
+        mFirebaseAuth = FirebaseAuth.getInstance();
+        FacebookSdk.sdkInitialize(getApplicationContext());
 
-        autenticacao = FirebaseAdapter.getFirebaseAutenticacao();
-        tipoAcesso.setOnClickListener(new View.OnClickListener(){
+        Log.d(TAG,"Iniciou! ");
+
+        ìmagemPerfil = findViewById(R.id.perfil);
+        loginButton = findViewById(R.id.login_button);
+        loginButton.setReadPermissions("email", "public_profile");
+        mCallbackManager = CallbackManager.Factory.create();
+        loginButton.registerCallback(mCallbackManager, new FacebookCallback<LoginResult>() {
             @Override
-            public void onClick(View v) {
-                if(tipoAcesso.isChecked()){
-                    botaoLogar.setText("CADASTRAR...");
-                }
-                else{
-                    botaoLogar.setText("LOGAR...");
-                }
+            public void onSuccess(LoginResult loginResult) {
+                Log.d(TAG,"login realizado: " +
+                        "" + loginResult);
+                handleFacebookToken(loginResult.getAccessToken());
+            }
+
+            @Override
+            public void onCancel() {
+                Log.d(TAG,"Login Cancelado! ");
+            }
+
+            @Override
+            public void onError(FacebookException error) {
+                Log.d(TAG,"Deu Erro!" +
+                        "" + error);
             }
         });
 
-        botaoLogar.setOnClickListener(new View.OnClickListener(){
+        authStateListener = new FirebaseAuth.AuthStateListener() {
             @Override
-            public void onClick(View v) {
-                String email = campoEmail.getText().toString();
-                String senha = campoSenha.getText().toString();
-
-                if(!email.isEmpty() && !senha.isEmpty()){
-                    if (tipoAcesso.isChecked()){ //Checkado == Cadastrar
-                        autenticacao.createUserWithEmailAndPassword(email, senha).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
-                                if(task.isSuccessful()){
-                                    Toast.makeText(LoginActivity.this, "Cadastro Realizado com sucesso! Efetuando login...", Toast.LENGTH_SHORT).show();
-
-                                    Usuario usuario = new Usuario(email);
-                                    UsuarioSessao.saveUsuario(LoginActivity.this, usuario);
-
-                                    startActivity(new Intent(getApplicationContext(), MainActivity.class));
-                                }else{
-
-                                }
-                            }
-                        });
-                    }else{ //Não checkado == Login
-                        autenticacao.signInWithEmailAndPassword(
-                                email, senha
-                        ).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
-                                if(task.isSuccessful()){
-                                    startActivity(new Intent(getApplicationContext(), MainActivity.class));
-                                }else{
-                                    Toast.makeText(LoginActivity.this, "Erro! Verifique o usuário/senha e tente novamente! ", Toast.LENGTH_SHORT).show();
-                                }
-                            }
-                        });
-                    }
+            public void onAuthStateChanged(@NonNull @NotNull FirebaseAuth firebaseAuth) {
+               FirebaseUser user = firebaseAuth.getCurrentUser();
+                if(user!=null){
+                    updateUI(user);
                 }else{
-                    Toast.makeText(LoginActivity.this, "Preencha E-mail e Senha!", Toast.LENGTH_SHORT).show();
+                    updateUI(null);
+                }
+            }
+        };
+
+        accessTokenTracker = new AccessTokenTracker() {
+            @Override
+            protected void onCurrentAccessTokenChanged(AccessToken oldAccessToken, AccessToken currentAccessToken) {
+                if(currentAccessToken==null){
+                    mFirebaseAuth.signOut();
+                }
+            }
+        };
+    }
+
+    private void handleFacebookToken(AccessToken accessToken) {
+        Log.d(TAG,"handlefacebook: " + accessToken);
+        AuthCredential credential = FacebookAuthProvider.getCredential(
+                accessToken.getToken());
+
+        mFirebaseAuth.signInWithCredential(credential).addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull @NotNull Task<AuthResult> task) {
+                if(task.isSuccessful()){
+                    Log.d(TAG,"Login com Facebook: Sucesso!");
+                    FirebaseUser user = mFirebaseAuth.getCurrentUser();
+                    updateUI(user);
+                }else{
+                    Log.d(TAG,"Login com Facebook: Falhou!,", task.getException());
+                    Toast.makeText(LoginActivity.this, "Autenticação Falhou", Toast.LENGTH_SHORT).show();
+                    updateUI(null);
                 }
             }
         });
     }
 
-    private void InicializarComponentes(){
-        campoEmail = findViewById(R.id.txtEmail);
-        campoSenha = findViewById(R.id.txtSenha);
-        botaoLogar = findViewById(R.id.buttonLogin);
-        tipoAcesso = findViewById(R.id.SwitchLogin);
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable @org.jetbrains.annotations.Nullable Intent data) {
+        mCallbackManager.onActivityResult(requestCode, resultCode, data);
+        super.onActivityResult(requestCode, resultCode, data);
+    }
+
+    private void updateUI(FirebaseUser user) {
+        if(user!=null){
+            textViewUsuario.setText(user.getDisplayName());
+            if(user.getPhotoUrl()!=null){
+                String ImagemURL=user.getPhotoUrl().toString();
+                ImagemURL = ImagemURL + "?type=large";
+                Picasso.get().load(ImagemURL).into(imagemPerfil);
+            }else{
+                textViewUsuario.setText("Deslogado!");
+                imagemPerfil.setImageResource(R.drawable.com_facebook_profile_picture_blank_portrait);
+            }
+        }
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        mFirebaseAuth.addAuthStateListener(authStateListener);
+    }
+
+    @Override
+    protected void onDestroy() {
+        accessTokenTracker.stopTracking();
+        super.onDestroy();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        if(authStateListener!=null){
+            mFirebaseAuth.removeAuthStateListener(authStateListener);
+        }
     }
 }

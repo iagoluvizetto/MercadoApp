@@ -22,17 +22,9 @@ public class PerfilFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        View root = inflater.inflate(R.layout.fragment_perfil, container, false);
-
+        View root = inflater.inflate(R.layout.activity_login, container, false);
         Usuario usuario = UsuarioSessao.loadUsuario(getActivity());
 
-
-        if (usuario != null) {
-            exibePerfil(root, usuario);
-
-        } else {
-            abreLoginActivity();
-        }
         return root;
     }
 
